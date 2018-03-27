@@ -9,6 +9,7 @@ import { TitleComponent } from './title/title.component';
 import { DownChevronComponent } from './down-chevron/down-chevron.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
+import { SkillsSectionComponent } from './skills-section/skills-section.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AboutSectionComponent } from './about-section/about-section.component';
     TitleComponent,
     DownChevronComponent,
     HomePageComponent,
-    AboutSectionComponent
+    AboutSectionComponent,
+    SkillsSectionComponent
   ],
   imports: [
     BrowserModule
