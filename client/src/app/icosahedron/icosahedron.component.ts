@@ -100,12 +100,13 @@ export class IcosahedronComponent implements AfterViewInit {
     private startRendering() {
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
-            antialias: true
+            antialias: true,
+            alpha: true
         });
 
         this.renderer.setPixelRatio(devicePixelRatio);
         this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-        this.renderer.setClearColor(0x262626, 1);
+        this.renderer.setClearColor(0x000000, 0);
         this.renderer.autoClear = true;
 
         this.render();
