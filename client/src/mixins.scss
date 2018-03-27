@@ -1,0 +1,22 @@
+$text-color: #CCC;
+$accent-color: #65D588;
+
+@mixin mobile {
+   @media (max-width: 768px) {
+       @content;
+   }
+}
+
+@mixin center-vertical {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-absolute {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,51 @@
+@import "~mixins.scss";
+
+:host {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 24px;
+    color: $text-color;
+    font-size: 0;
+
+    .title {
+        h1 {
+            font-size: 20px;
+            font-weight: normal;
+            color: $accent-color;
+        }
+
+        p {
+            font-size: 16px;
+            opacity: 0.75;
+        }
+    }
+
+    .links {
+        * {
+            @include center-vertical;
+
+            padding: 8px 0;
+        }
+
+        a {
+            margin-right: 20px;
+            font-size: 18px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @include mobile {
+        .title {
+            display: none;
+        }
+
+        .links {
+            text-align: center;
+            width: 100vw;
+        }
+    }
+}

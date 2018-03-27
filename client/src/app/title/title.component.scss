@@ -1,0 +1,27 @@
+@import "~mixins.scss";
+
+$shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+:host {
+    @include center-absolute;
+
+    display: inline-block;
+    width: 100vw;
+    text-align: center;
+
+    h1 {
+        color: $text-color;
+        font-size: 64px;
+        text-shadow: $shadow;
+
+        .name {
+            color: $accent-color !important;
+        }
+    }
+
+    h2 {
+        color: $text-color;
+        font-size: 28px;
+        text-shadow: $shadow;
+    }
+}
