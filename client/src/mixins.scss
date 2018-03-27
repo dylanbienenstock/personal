@@ -1,5 +1,7 @@
 $text-color: #CCC;
 $accent-color: #65D588;
+$header-padding: 3vw;
+// $header-padding: 4.25vw;
 
 @mixin mobile {
    @media (max-width: 768px) {
