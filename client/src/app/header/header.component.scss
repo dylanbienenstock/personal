@@ -1,14 +1,12 @@
 @import "~mixins.scss";
 
-$padding: 4.25vw;
-
 :host {
     @include noselect;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding: $padding;
+    padding: $header-padding;
     color: $text-color;
     font-size: 0;
 
@@ -52,12 +50,12 @@ $padding: 4.25vw;
         text-align: center;
 
         .title {
-            margin-bottom: $padding * 2;
+            margin-bottom: $header-padding * 2;
         }
 
         .links {
             text-align: center;
-            width: calc(100vw - $padding * 2);
+            width: calc(100vw - $header-padding * 2);
         }
     }
 
