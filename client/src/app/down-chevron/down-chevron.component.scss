@@ -1,0 +1,26 @@
+@import "~mixins.scss";
+
+$size: 40px;
+$downward-movement: 8px;
+
+:host {
+    display: block;
+    position: absolute;
+    top: calc(100% - #{$size} - #{$downward-movement} - #{$header-padding} / 2);
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+        cursor: pointer;
+        width: $size;
+        transition: padding 300ms ease;
+
+        &:hover {
+            padding-top: $downward-movement;
+        }
+
+        &:active {
+            opacity: 0.75;
+        }
+    }
+}
