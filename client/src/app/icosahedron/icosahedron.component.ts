@@ -120,9 +120,8 @@ export class IcosahedronComponent implements AfterViewInit {
 
     public render() {
         this.icosahedron.rotation.x += 0.001 * this.speedMod;
-        this.icosahedron.rotation.y += 0.0015 * this.speedMod;
-        this.icosahedron.rotation.z += 0.002 * this.speedMod;
-        this.speedMod = this.lerp(this.speedMod, 1, 0.025);
+        this.icosahedron.rotation.y += 0.002 * this.speedMod;
+        this.speedMod = this.lerp(this.speedMod, 1, 0.015);
 
         this.renderer.render(this.scene, this.camera);
 
