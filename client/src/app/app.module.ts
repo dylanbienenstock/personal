@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { IcosahedronComponent } from './icosahedron/icosahedron.component';
 import { TitleComponent } from './title/title.component';
 import { DownChevronComponent } from './down-chevron/down-chevron.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AboutSectionComponent } from './about-section/about-section.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { DownChevronComponent } from './down-chevron/down-chevron.component';
     HeaderComponent,
     IcosahedronComponent,
     TitleComponent,
-    DownChevronComponent
+    DownChevronComponent,
+    HomePageComponent,
+    AboutSectionComponent
   ],
   imports: [
     BrowserModule
