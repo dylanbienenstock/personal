@@ -5,8 +5,8 @@ $shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 :host {
     @include center-absolute;
 
-    display: inline-block;
-    width: 100vw;
+    display: table;
+    padding: 0 32px;
     text-align: center;
 
     h1 {
