@@ -1,6 +1,6 @@
 @import "~mixins.scss";
 
-$padding: 24px;
+$padding: 4.25vw;
 
 :host {
     display: flex;
@@ -11,6 +11,8 @@ $padding: 24px;
     font-size: 0;
 
     .title {
+        font-family: "Source Code Pro", sans-serif;
+
         h1 {
             font-size: 20px;
             font-weight: normal;
