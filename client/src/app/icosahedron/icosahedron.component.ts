@@ -153,7 +153,10 @@ export class IcosahedronComponent implements AfterViewInit {
         this.startRendering();
     }
 
-    onClick() {
+    onClick(event: Event) {
+        event.preventDefault();
+        event.stopPropagation();
+
         this.speedMod += 2.5;
     }
 }
