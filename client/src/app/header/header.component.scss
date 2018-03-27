@@ -3,6 +3,8 @@
 $padding: 4.25vw;
 
 :host {
+    @include noselect;
+
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
