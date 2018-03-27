@@ -29,6 +29,7 @@ export class IcosahedronComponent implements AfterViewInit {
 
     public icosahedron: THREE.Object3D;
     public resizeTimeout: any;
+    public speedMod: number = 1;
 
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
@@ -113,9 +114,15 @@ export class IcosahedronComponent implements AfterViewInit {
         this.render();
     }
 
+    lerp(v0, v1, t) {
+        return v0 * (1 - t) + v1 * t
+    }
+
     public render() {
-        this.icosahedron.rotation.x += 0.001;
-        this.icosahedron.rotation.y += 0.002;
+        this.icosahedron.rotation.x += 0.001 * this.speedMod;
+        this.icosahedron.rotation.y += 0.0015 * this.speedMod;
+        this.icosahedron.rotation.z += 0.002 * this.speedMod;
+        this.speedMod = this.lerp(this.speedMod, 1, 0.025);
 
         this.renderer.render(this.scene, this.camera);
 
@@ -144,5 +151,9 @@ export class IcosahedronComponent implements AfterViewInit {
         this.createLight();
         this.createCamera();
         this.startRendering();
+    }
+
+    onClick() {
+        this.speedMod += 2.5;
     }
 }
