@@ -6,6 +6,7 @@ $size: 66vmin;
     @include center-absolute;
 
     canvas {
+        cursor: pointer;
         width: $size !important;
         height: $size !important;
 
