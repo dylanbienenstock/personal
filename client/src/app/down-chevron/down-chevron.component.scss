@@ -9,7 +9,7 @@ $downward-movement: 8px;
     display: block;
     position: absolute;
     top: calc(100% - #{$size} - #{$downward-movement} - #{$header-padding} / 2);
-    left: 50%;
+    left: 50vw;
     transform: translateX(-50%);
 
     img {
