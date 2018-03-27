@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Renderer, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, Renderer, ViewChild, ElementRef, HostListener } from '@angular/core';
 import * as THREE from "three";
 
 @Component({
@@ -28,6 +28,7 @@ export class IcosahedronComponent implements AfterViewInit {
     public farClippingPane: number = 1100;
 
     public icosahedron: THREE.Object3D;
+    public resizeTimeout: any;
 
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
@@ -119,6 +120,23 @@ export class IcosahedronComponent implements AfterViewInit {
         this.renderer.render(this.scene, this.camera);
 
         requestAnimationFrame(this.render);
+    }
+
+    @HostListener("window:resize", ["$event"])
+    public onResize(event: Event) {
+        clearTimeout(this.resizeTimeout);
+
+        this.resizeTimeout = setTimeout(() => {
+            this.resizeRenderer();
+        }, 100);
+    }
+
+    public resizeRenderer() {
+        this.canvas.style.width = "100%";
+        this.canvas.style.height = "100%";
+        this.camera.aspect = this.getAspectRatio();
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
     }
 
     ngAfterViewInit() {
