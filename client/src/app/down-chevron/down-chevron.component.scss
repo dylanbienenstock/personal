@@ -4,6 +4,8 @@ $size: 40px;
 $downward-movement: 8px;
 
 :host {
+    @include noselect;
+
     display: block;
     position: absolute;
     top: calc(100% - #{$size} - #{$downward-movement} - #{$header-padding} / 2);
