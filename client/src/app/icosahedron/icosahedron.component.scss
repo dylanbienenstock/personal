@@ -1,20 +1,14 @@
 @import "~mixins.scss";
 
-$size: 475px;
+$size: 66vmin;
 
 :host {
     @include center-absolute;
 
     canvas {
-        width: $size;
-        height: $size;
+        width: $size !important;
+        height: $size !important;
 
         opacity: 0.4;
-    }
-}
-
-@media (max-width: $size) {
-    canvas {
-        display: none;
     }
 }
