@@ -5,20 +5,34 @@
     width: 100vw;
     padding: 48px 0;
 
-    background-color: $accent-color;
+    color: $background-color;
+    background-color: $text-color;
 
     text-align: center;
 
     div {
         display: inline-block;
         width: 50vw;        
-        text-align: left;
         font-size: 20px;
 
         h1 {
-            font-size: 28px;
+            font-size: 32px;
+        }
 
-            
+        .blurb {
+            text-align: left;
+            margin: 16px 0 64px 0;
+        }
+
+        .icons {
+            img {
+                width: 42px;
+                margin-right: 16px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
         }
     }
 }
