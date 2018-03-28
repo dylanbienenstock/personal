@@ -35,10 +35,6 @@
                 padding: 8px 0;
                 margin-right: 20px;
                 font-size: 18px;
-
-                &:last-child {
-                    margin-right: 0;
-                }
             }
         }
     }
@@ -54,6 +50,14 @@
         .links {
             text-align: center;
             width: calc(100vw - $header-padding * 2);
+
+            .links-inner {
+                a {
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
         }
     }
 
