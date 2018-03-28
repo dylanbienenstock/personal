@@ -3,4 +3,22 @@
 :host {
     @include section-light;
 
+    div {
+        display: inline-block;
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .projects {
+            .project-subsection {
+                display: flex;
+                flex-flow: row nowrap;
+
+                .project-subsection-text {
+                    width: 400px;
+                }
+            }
+        }
+    }
 }

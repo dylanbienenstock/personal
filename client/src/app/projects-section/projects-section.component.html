@@ -1,1 +1,16 @@
-<div></div>
+<div>
+    <h1>My Projects</h1>    
+
+    <div class="projects">
+        <div class="project-subsection" *ngFor="let projectSubsection of projectSubsections">
+            <div class="project-subsection-text">
+                <h1>{{ projectSubsection.name }}</h1>
+                <p>{{ projectSubsection.description }}</p>
+            </div>
+
+            <app-projects-section-screenshot
+            [image]="projectSubsection.image">
+            </app-projects-section-screenshot>
+        </div>
+    </div>
+</div>
