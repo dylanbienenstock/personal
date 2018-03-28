@@ -85,6 +85,44 @@
                         }
                     }
                 }
+
+                @media (max-width: 1020px) {
+                    display: grid;
+                    grid: 1fr 1fr / 1fr 1fr;
+                    grid-gap: 32px;
+
+                    .skill-subsection {
+                        margin: 0;
+
+                        &:first-child {
+                            grid-column: 1 / span 2;
+                            width: auto;
+                        }
+                    }
+
+                    @media (max-width: 700px) {
+                        display: flex;
+                        flex-flow: column;
+
+                        .skill-subsection {
+                            margin-bottom: 48px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        @media (max-width: 425px) {
+                            .skill-subsection {
+                                width: 100vw;
+                                border-left: none;
+                                border-right: none;
+                                border-bottom: none;
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
