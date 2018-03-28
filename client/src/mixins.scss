@@ -4,6 +4,26 @@ $accent-color: #65D588;
 $header-padding: 3vw;
 // $header-padding: 4.25vw;
 
+@mixin section {
+    display: block;
+    width: 100vw;
+    padding: 48px 0;
+    text-align: center;    
+}
+
+@mixin section-dark {
+    @include section;
+
+    color: $text-color;
+}
+
+@mixin section-light {
+    @include section;
+
+    color: $background-color;
+    background-color: $text-color;
+}
+
 @mixin mobile {
    @media (max-width: 768px) {
        @content;
