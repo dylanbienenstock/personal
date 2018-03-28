@@ -10,18 +10,48 @@
 
     text-align: center;
 
-    div {
+    .container {
         display: inline-block;
         width: 50vw;        
         font-size: 20px;
 
         h1 {
             font-size: 32px;
-            margin-bottom: 16px;
         }
 
         .blurb {
+            margin: 16px 0 64px 0;
             text-align: left;
+        }
+    }
+
+    .skills {
+        text-align: center;
+
+        .skill-section-container {
+            display: inline-block;
+
+            .skill-section-container-inner {
+                display: flex;
+                flex-flow: row;
+
+                .skill-section {
+                    margin-right: 32px;
+                    padding: 0 24px 24px 24px;
+                    border: 2px solid $text-color;
+                    border-radius: 8px;
+
+                    h1 {
+                        padding: 0 8px;
+                        transform: translateY(-50%);
+                        background-color: $background-color;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
         }
     }
 }
