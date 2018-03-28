@@ -11,6 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { SkillsSectionComponent } from './skills-section/skills-section.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
+import { ProjectsSectionScreenshotComponent } from './projects-section-screenshot/projects-section-screenshot.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProjectsSectionComponent } from './projects-section/projects-section.co
     HomePageComponent,
     AboutSectionComponent,
     SkillsSectionComponent,
-    ProjectsSectionComponent
+    ProjectsSectionComponent,
+    ProjectsSectionScreenshotComponent
   ],
   imports: [
     BrowserModule
