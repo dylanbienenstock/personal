@@ -38,7 +38,6 @@
                 .skill-section {
                     width: 285px;
                     margin-right: 32px;
-                    padding: 0 24px 24px 24px;
                     border: 2px solid $text-color;
                     border-radius: 8px;
 
@@ -51,6 +50,12 @@
                         padding: 0 8px;
                         transform: translateY(-50%);
                         background-color: $background-color;
+                    }
+
+                    p {
+                        &:nth-child(even) {
+                            background-color: rgba(255, 255, 255, 0.1);
+                        }
                     }
                 }
             }
