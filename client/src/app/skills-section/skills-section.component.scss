@@ -1,14 +1,7 @@
 @import "~mixins.scss";
 
 :host {
-    display: block;
-    width: 100vw;
-    padding: 48px 0;
-
-    color: $text-color;
-    background-color: $background-color;
-
-    text-align: center;
+    @include section-dark;
 
     .container {
         display: inline-block;
