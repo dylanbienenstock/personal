@@ -36,19 +36,21 @@
                 flex-flow: row;
 
                 .skill-section {
+                    width: 285px;
                     margin-right: 32px;
                     padding: 0 24px 24px 24px;
                     border: 2px solid $text-color;
                     border-radius: 8px;
 
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
                     h1 {
+                        display: inline-block;
                         padding: 0 8px;
                         transform: translateY(-50%);
                         background-color: $background-color;
-                    }
-
-                    &:last-child {
-                        margin-right: 0;
                     }
                 }
             }
