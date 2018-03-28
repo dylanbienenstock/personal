@@ -14,9 +14,28 @@
             .project-subsection {
                 display: flex;
                 flex-flow: row nowrap;
+                margin-top: 128px;
+
+                &:first-child {
+                    margin-top: 72px;
+                }
+
+                &:nth-child(even) {
+                    .project-subsection-text {
+                        margin-right: 0;
+                        margin-left: 32px;
+
+                        order: 1;
+                    }
+                }
 
                 .project-subsection-text {
                     width: 400px;
+                    margin-right: 32px;
+
+                    h1 {
+                        margin-bottom: 16px;
+                    }
                 }
             }
         }
