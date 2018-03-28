@@ -14,7 +14,15 @@
             <div class="skill-section" *ngFor="let skillSection of skillSections">
                 <h1>{{ skillSection.name }}</h1>
 
-                <p *ngFor="let skill of skillSection.skills">{{ skill }}</p>
+                <div class="skill" *ngFor="let skill of skillSection.skills">
+                    <span class="skill-name">{{ skill.name }}</span>
+
+                    <span class="skill-level" [ngSwitch]="skill.level">
+                        <span class="skill-level-0" *ngSwitchCase="0">Beginner</span>
+                        <span class="skill-level-1" *ngSwitchCase="1">Intermediate</span>
+                        <span class="skill-level-2" *ngSwitchCase="2">Proficient</span>
+                    </span>
+                </div>
             </div>
         </div>
     </div>

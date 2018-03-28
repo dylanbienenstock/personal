@@ -52,9 +52,36 @@
                         background-color: $background-color;
                     }
 
-                    p {
+                    .skill {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-between;
+                        padding: 0 16px;
+                        line-height: 32px;
+
                         &:nth-child(even) {
-                            background-color: rgba(255, 255, 255, 0.1);
+                            background-color: rgba(255, 255, 255, 0.05);
+                        }
+
+                        .skill-name {
+                            text-align: left;
+                            font-size: 16px;
+                        }
+
+                        .skill-level {
+                            font-size: 12px;
+                            
+                            .skill-level-0 {
+                                color: #d68f44;
+                            }
+
+                            .skill-level-1 {
+                                color: #d6d144;
+                            }
+
+                            .skill-level-2 {
+                                color: $accent-color;
+                            }
                         }
                     }
                 }
