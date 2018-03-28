@@ -9,12 +9,12 @@
 </div>
 
 <div class="skills">
-    <div class="skill-section-container">
-        <div class="skill-section-container-inner">
-            <div class="skill-section" *ngFor="let skillSection of skillSections">
-                <h1>{{ skillSection.name }}</h1>
+    <div class="skill-subsection-container">
+        <div class="skill-subsection-container-inner">
+            <div class="skill-subsection" *ngFor="let skillSubsection of skillSubsections">
+                <h1>{{ skillSubsection.name }}</h1>
 
-                <div class="skill" *ngFor="let skill of skillSection.skills">
+                <div class="skill" *ngFor="let skill of skillSubsection.skills">
                     <span class="skill-name">{{ skill.name }}</span>
 
                     <span class="skill-level" [ngSwitch]="skill.level">

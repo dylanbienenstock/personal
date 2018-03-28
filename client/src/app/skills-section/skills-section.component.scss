@@ -28,14 +28,14 @@
     .skills {
         text-align: center;
 
-        .skill-section-container {
+        .skill-subsection-container {
             display: inline-block;
 
-            .skill-section-container-inner {
+            .skill-subsection-container-inner {
                 display: flex;
                 flex-flow: row;
 
-                .skill-section {
+                .skill-subsection {
                     width: 285px;
                     margin-right: 32px;
                     border: 2px solid $text-color;

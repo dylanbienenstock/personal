@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./skills-section.component.scss']
 })
 export class SkillsSectionComponent implements OnInit {
-    skillSections: any = [
+    skillSubsections: any = [
         {
             name: "Technologies",
             skills: [
@@ -114,9 +114,9 @@ export class SkillsSectionComponent implements OnInit {
 
     constructor()
     {
-        for (let section in this.skillSections) {
-            this.skillSections[section].skills =
-            this.skillSections[section].skills.sort((a, b) => {
+        for (let section in this.skillSubsections) {
+            this.skillSubsections[section].skills =
+            this.skillSubsections[section].skills.sort((a, b) => {
                 if (a.level < b.level) return 1;
                 if (a.level > b.level) return -1;
 
