@@ -4,6 +4,7 @@ $size: 66vmin;
 
 :host {
     @include center-absolute;
+    @include noselect;
 
     canvas {
         cursor: pointer;
