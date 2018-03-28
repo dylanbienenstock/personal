@@ -1,0 +1,47 @@
+@import "~mixins.scss";
+
+$titlebar-color: $background-color;
+$titlebar-height: 38px;
+$titlebar-button-size: 16px;
+$screenshot-aspect-ratio: 16 / 9;
+$screenshot-width: 666px;
+
+:host {
+    font-size: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    .titlebar {
+        height: $titlebar-height;
+        text-align: left;
+        background-color: $titlebar-color;
+        padding-left: 14px;
+
+        .titlebar-buttons {
+            @include center-vertical;
+
+            div {
+                display: inline-block;
+                width: $titlebar-button-size;
+                height: $titlebar-button-size;
+                background-color: gray;
+                border-radius: 50%;
+                margin-right: 8px;
+
+                &:nth-child(1) { background-color: red; }
+                &:nth-child(2) { background-color: orange; }
+                &:nth-child(3) { background-color: green; }
+            }
+        }
+    }
+
+    img {
+        border: 0;
+        outline: 0;
+
+        background-color: gray;
+        width: $screenshot-width;
+        height: (1 / $screenshot-aspect-ratio) * $screenshot-width;
+    }
+}
