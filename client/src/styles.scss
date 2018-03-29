@@ -12,3 +12,11 @@ html, body {
 h1, h2, h3, h4, p {
     margin: 0;
 }
+
+::selection {
+	background: $accent-color;
+}
+
+::-moz-selection {
+	background: $accent-color;
+}
