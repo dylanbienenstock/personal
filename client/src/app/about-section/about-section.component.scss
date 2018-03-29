@@ -20,14 +20,29 @@
         }
 
         .icons {
+            display: inline-block;
             font-size: 0;
 
-            img {
-                width: 42px;
-                margin-right: 16px;
+            .icons-inner {
+                img {
+                    width: 42px;
+                    margin-right: 16px;
 
-                &:last-child {
-                    margin-right: 0;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            @media (max-width: 340px) {
+                .icons-inner {
+                    display: grid;
+                    grid: 1fr 1fr / 1fr 1fr;
+                    grid-row-gap: 16px;
+
+                    img[data-icon="facebook"] {
+                        display: none;
+                    }
                 }
             }
 		}
