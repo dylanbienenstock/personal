@@ -4,8 +4,12 @@
     <div class="projects">
         <div class="project-subsection" *ngFor="let projectSubsection of projectSubsections">
             <div class="project-subsection-text">
-                <h1>{{ projectSubsection.name }}</h1>
-                <p>{{ projectSubsection.description }}</p>
+                <h1 class="project-subsection-text-name">{{ projectSubsection.name }}</h1>
+                <p class="project-subsection-text-description"> {{ projectSubsection.description }}</p>
+                
+                <div class="project-subsection-text-tags"> 
+                    <div *ngFor="let tag of projectSubsection.tags">{{ tag }}</div>
+                </div>
             </div>
 
             <app-projects-section-screenshot
