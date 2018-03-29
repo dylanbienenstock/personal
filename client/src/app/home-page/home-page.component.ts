@@ -25,17 +25,8 @@ export class HomePageComponent implements OnInit {
 
 	onIcosahedronRender($event) {
 		let speed: number = $event;
-		let opacity = 1 - (speed / 10);
-		let lerpFactor = opacity < 0.8 ? 0.15 : 0.5;
+        let opacity = 1 - ((speed - 1) / 10);
 
-		this.titleOpacity = this.lerp(this.titleOpacity, opacity, lerpFactor);
-
-		if (this.titleOpacity < 0.01) {
-			this.titleOpacity = 0;
-		} else if (this.titleOpacity > 0.95) {
-			this.titleOpacity = 1;
-		}
-		
-		this.titleStyle = { opacity: this.titleOpacity };
+        this.titleStyle = { opacity: +(opacity.toFixed(2)) };
 	}
 }

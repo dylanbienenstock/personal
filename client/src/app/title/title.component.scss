@@ -6,7 +6,8 @@ $shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     @include noselect;
 	@include center-absolute;
 	
-	will-change: opacity;
+    will-change: opacity;
+    transition: opacity 100ms linear;
 
     display: table;
     padding: 0 32px;
@@ -16,7 +17,6 @@ $shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     h1 {
         color: $text-color;
         font-size: 64px;
-		text-shadow: $shadow;
 		line-height: 1;
 		margin-bottom: 10px;
 
@@ -28,6 +28,5 @@ $shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     h2 {
         color: $text-color;
         font-size: 28px;
-        text-shadow: $shadow;
     }
 }
