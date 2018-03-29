@@ -12,6 +12,8 @@ import { AboutSectionComponent } from './about-section/about-section.component';
 import { SkillsSectionComponent } from './skills-section/skills-section.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { ProjectsSectionScreenshotComponent } from './projects-section-screenshot/projects-section-screenshot.component';
+import { ScrollService } from './scroll.service';
+import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ProjectsSectionScreenshotComponent } from './projects-section-screensho
 	BrowserModule,
   ],
   providers: [
-	  Title
+	  Title,
+	  ScrollToService,
+	  ScrollService
   ],
   bootstrap: [AppComponent]
 })
