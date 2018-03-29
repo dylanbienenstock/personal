@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-root',
@@ -7,7 +8,9 @@ import { Component, ViewChild, ElementRef, AfterViewInit, HostListener } from '@
 })
 
 export class AppComponent implements AfterViewInit {
-	title = 'app';
+	constructor(private _titleService: Title) {
+		_titleService.setTitle("Dylan Bienenstock")
+	}
 
     @ViewChild("content")
     private contentRef: ElementRef;

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
@@ -28,9 +28,11 @@ import { ProjectsSectionScreenshotComponent } from './projects-section-screensho
     ProjectsSectionScreenshotComponent
   ],
   imports: [
-    BrowserModule
+	BrowserModule,
   ],
-  providers: [],
+  providers: [
+	  Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
