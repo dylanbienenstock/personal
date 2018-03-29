@@ -19,5 +19,9 @@
     "homepage": "https://github.com/dylanbienenstock/personal#readme",
     "dependencies": {
         "express": "^4.16.3"
+    },
+    "engines": {
+        "node": "~8.9.4",
+        "npm": "~5.7.1"
     }
 }
