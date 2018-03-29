@@ -3,7 +3,9 @@
 :host {
     @include section-light;
 
-    div {
+    .container {
+		@include fill-screen-mobile;
+
         display: inline-block;
         width: 50vw;        
         font-size: 20px;
@@ -28,6 +30,6 @@
                     margin-right: 0;
                 }
             }
-        }
+		}
     }
 }
