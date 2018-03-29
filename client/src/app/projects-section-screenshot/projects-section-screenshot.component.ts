@@ -7,11 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProjectsSectionScreenshotComponent implements OnInit {
     @Input() image: string;
-    showTitleBar: boolean = false;
 
     constructor() { }
 
     ngOnInit() {
-    }
 
+    }
 }
