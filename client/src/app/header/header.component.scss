@@ -50,16 +50,15 @@
     }
 
     @include mobile {
-        flex-flow: column nowrap;
-        text-align: center;
+		padding: 16px;
 
         .title {
-            margin-bottom: $header-padding * 2;
+			display: none;
         }
 
         .links {
             text-align: center;
-            width: calc(100vw - $header-padding * 2);
+            width: 100%;
 
             .links-inner {
                 a {
