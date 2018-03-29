@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Renderer, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, AfterViewInit, Renderer, ViewChild, ElementRef, HostListener, EventEmitter, Output } from '@angular/core';
 import * as THREE from "three";
 
 @Component({
@@ -11,6 +11,8 @@ import * as THREE from "three";
 // https://github.com/makimenko/angular-three-examples
 
 export class IcosahedronComponent implements AfterViewInit {
+	@Output() onRender: EventEmitter<number> = new EventEmitter();
+
     constructor() {
         this.render = this.render.bind(this);
     }
@@ -29,7 +31,7 @@ export class IcosahedronComponent implements AfterViewInit {
 
     public icosahedron: THREE.Object3D;
     public resizeTimeout: any;
-    public speedMod: number = 1;
+    public speed: number = 1;
 
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
@@ -119,11 +121,13 @@ export class IcosahedronComponent implements AfterViewInit {
     }
 
     public render() {
-        this.icosahedron.rotation.x += 0.001 * this.speedMod;
-        this.icosahedron.rotation.y += 0.002 * this.speedMod;
-        this.speedMod = this.lerp(this.speedMod, 1, 0.015);
+        this.icosahedron.rotation.x += 0.001 * this.speed;
+        this.icosahedron.rotation.y += 0.002 * this.speed;
+        this.speed = this.lerp(this.speed, 1, 0.015);
 
-        this.renderer.render(this.scene, this.camera);
+		this.renderer.render(this.scene, this.camera);
+		
+		this.onRender.emit(this.speed);
 
         requestAnimationFrame(this.render);
     }
@@ -156,6 +160,6 @@ export class IcosahedronComponent implements AfterViewInit {
         event.preventDefault();
         event.stopPropagation();
 
-        this.speedMod += 2.5;
+        this.speed += 2.5;
     }
 }
