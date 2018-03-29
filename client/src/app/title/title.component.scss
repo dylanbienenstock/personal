@@ -14,7 +14,9 @@ $shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     h1 {
         color: $text-color;
         font-size: 64px;
-        text-shadow: $shadow;
+		text-shadow: $shadow;
+		line-height: 1;
+		margin-bottom: 10px;
 
         .name {
             color: $accent-color !important;
