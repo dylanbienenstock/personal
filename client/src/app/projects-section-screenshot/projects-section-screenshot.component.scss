@@ -9,38 +9,14 @@ $screenshot-width: 666px;
 :host {
     display: table;    
     font-size: 0;
-    border-radius: 14px;
     overflow: hidden;
     box-sizing: border-box;
-    
-    .titlebar {
-        height: $titlebar-height;
-        text-align: left;
-        background-color: $titlebar-color;
-        padding-left: 14px;
-
-        .titlebar-buttons {
-            @include center-vertical;
-
-            div {
-                display: inline-block;
-                width: $titlebar-button-size;
-                height: $titlebar-button-size;
-                background-color: gray;
-                border-radius: 50%;
-                margin-right: 8px;
-
-                &:nth-child(1) { background-color: red; }
-                &:nth-child(2) { background-color: orange; }
-                &:nth-child(3) { background-color: green; }
-            }
-        }
-    }
 
     img {
         border: 0;
         outline: 0;
 
+		border-radius: 14px;				
         background-color: gray;
         width: $screenshot-width;
         height: (1 / $screenshot-aspect-ratio) * $screenshot-width;
@@ -53,16 +29,16 @@ $screenshot-width: 666px;
     }
 
     @include mobile {
-        width: 100vw;
-        border-radius: 0;
+        position: initial !important;
+        transform: unset !important;
 
-        .titlebar {
-            display: none;
-        }
-
-        img {
-            width: 100vw;
-            height: (1 / $screenshot-aspect-ratio) * 100vw;
-        }
+		width: calc(100vw - 64px);
+		height: calc((1 / #{$screenshot-aspect-ratio}) * (100vw - 64px));
+		margin-left: 32px;
+		
+		img {
+			width: calc(100vw - 64px);
+			height: calc((1 / #{$screenshot-aspect-ratio}) * (100vw - 64px));
+		}
     }
 }
