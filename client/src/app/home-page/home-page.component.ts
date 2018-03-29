@@ -9,7 +9,7 @@ import { NgStyle } from '@angular/common';
 	styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-	constructor(private _scroll: ScrollService) { }
+	constructor(public _scroll: ScrollService) { }
 
 	icosahedronSpeed: number;
 	titleOpacity: number = 1;

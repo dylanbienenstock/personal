@@ -9,7 +9,7 @@ import { ScrollService } from '../scroll.service';
 
 export class HeaderComponent implements OnInit {
 
-	constructor(private _scroll: ScrollService) { }
+	constructor(public _scroll: ScrollService) { }
 
 	ngOnInit() {
 
