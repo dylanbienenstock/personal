@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "postinstall": "ng build --aot -prod"
+        "postinstall": "cd client && ng build --aot -prod"
     },
     "repository": {
         "type": "git",
