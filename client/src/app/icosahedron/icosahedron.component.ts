@@ -31,7 +31,7 @@ export class IcosahedronComponent implements AfterViewInit {
 
     public icosahedron: THREE.Object3D;
     public resizeTimeout: any;
-    public speed: number = 1;
+	public speed: number = 1;
 
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
@@ -44,20 +44,22 @@ export class IcosahedronComponent implements AfterViewInit {
             color: 0xFFFFFF,
             flatShading: true,
             vertexColors: THREE.VertexColors,
-            shininess: 0
+			shininess: 0,
+			transparent: true,
+			opacity: 0.4
         });
 
-        var wireframeMaterial = new THREE.MeshBasicMaterial({
-            color: 0x000000,
-            wireframe: true,
-            transparent: true
-        });
+        // var wireframeMaterial = new THREE.MeshBasicMaterial({
+        //     color: 0x000000,
+        //     wireframe: true,
+        //     transparent: true
+        // });
 
         var geometry = new THREE.IcosahedronGeometry(50, 1);
-        this.icosahedron = new THREE.Mesh(geometry, phongMaterial);
+		this.icosahedron = new THREE.Mesh(geometry, phongMaterial);
         // this.icosahedron.add(new THREE.Mesh(geometry, wireframeMaterial));
 
-        this.scene.add(this.icosahedron);
+		this.scene.add(this.icosahedron);
     }
 
     private createLight() {
@@ -121,14 +123,17 @@ export class IcosahedronComponent implements AfterViewInit {
     }
 
     public render() {
+		this.speed = this.lerp(this.speed, 1, 0.015);
+
         this.icosahedron.rotation.x += 0.001 * this.speed;
-        this.icosahedron.rotation.y += 0.002 * this.speed;
-        this.speed = this.lerp(this.speed, 1, 0.015);
+		this.icosahedron.rotation.y += 0.002 * this.speed;
+		
+		let destOpacity = 0.4 + 0.6 * (this.speed / 10);
+		this.icosahedron.material.opacity = 
+			this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15);
 
 		this.renderer.render(this.scene, this.camera);
-		
 		this.onRender.emit(this.speed);
-
         requestAnimationFrame(this.render);
     }
 
