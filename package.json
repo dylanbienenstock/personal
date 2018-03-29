@@ -18,7 +18,9 @@
     },
     "homepage": "https://github.com/dylanbienenstock/personal#readme",
     "dependencies": {
-        "express": "^4.16.3"
+        "express": "^4.16.3",
+        "@angular/cli": "~1.7.3",
+        "@angular/compiler-cli": "^5.2.0"
     },
     "engines": {
         "node": "~8.9.4",
