@@ -17,6 +17,10 @@
         "url": "https://github.com/dylanbienenstock/personal/issues"
     },
     "homepage": "https://github.com/dylanbienenstock/personal#readme",
+    "engines": {
+        "node": "~8.9.4",
+        "npm": "~5.7.1"
+    },
     "dependencies": {
         "@angular/cli": "^1.7.3",
         "@angular/common": "^5.1.2",
