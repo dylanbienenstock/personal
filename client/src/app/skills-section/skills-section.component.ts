@@ -18,8 +18,8 @@ export class SkillsSectionComponent implements OnInit {
                 if (a.level < b.level) return 1;
                 if (a.level > b.level) return -1;
 
-                if (a.name[0] > b.name[0]) return 1;
-                if (a.name[0] < b.name[0]) return -1;
+                if (a.name > b.name) return 1;
+                if (a.name < b.name) return -1;
 
                 return 0;
             });
