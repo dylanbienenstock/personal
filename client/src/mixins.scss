@@ -30,6 +30,15 @@ $header-padding: 3vw;
    }
 }
 
+@mixin fill-screen-mobile {
+	@include mobile {
+		width: 100vw;
+		padding-left: 32px;
+		padding-right: 32px;
+		box-sizing: border-box;
+	}
+}
+
 @mixin noselect {
     -webkit-user-select: none;
     -moz-user-select: none;
