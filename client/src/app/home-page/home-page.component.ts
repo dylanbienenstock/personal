@@ -25,7 +25,7 @@ export class HomePageComponent implements OnInit {
 
 	onIcosahedronRender($event) {
 		let speed: number = $event;
-        let opacity = 1 - ((speed - 1) / 10);
+        let opacity = Math.max(0, 1 - ((speed - 1) / 10));
 
         this.titleStyle = { opacity: +(opacity.toFixed(2)) };
 	}

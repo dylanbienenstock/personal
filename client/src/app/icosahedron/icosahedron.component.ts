@@ -128,7 +128,7 @@ export class IcosahedronComponent implements AfterViewInit {
         this.icosahedron.rotation.x += 0.001 * this.speed;
 		this.icosahedron.rotation.y += 0.002 * this.speed;
 		
-		let destOpacity = 0.4 + 0.6 * (this.speed / 10);
+		let destOpacity = 0.4 + 0.6 * ((this.speed - 1) / 10);
 		this.icosahedron.material.opacity = 
 			this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15);
 
