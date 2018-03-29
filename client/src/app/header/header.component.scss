@@ -9,18 +9,28 @@
     font-size: 0;
 
     .title {
-        font-family: "Source Code Pro", sans-serif;
+		display: flex;
+		flex-flow: row nowrap;
+		font-family: "Source Code Pro", sans-serif;
+		
+		img {
+			margin-right: 12px;
+			width: 37px;
+			opacity: 0.75;
+		}
 
-        h1 {
-            font-size: 20px;
-            font-weight: normal;
-            color: $accent-color;
-        }
+		.title-text {
+			h1 {
+				font-size: 20px;
+				font-weight: normal;
+				color: $accent-color;
+			}
 
-        p {
-            font-size: 16px;
-            opacity: 0.75;
-        }
+			p {
+				font-size: 16px;
+				opacity: 0.75;
+			}
+		}
     }
 
     .links {
