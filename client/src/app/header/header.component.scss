@@ -68,18 +68,10 @@
         .links {
             text-align: center;
             width: 100%;
-
-            // .links-inner {
-            //     a {
-            //         &:last-child {
-            //             margin-right: 0;
-            //         }
-            //     }
-            // }
         }
     }
 
-    @media (max-width: 335px) {
+    @media (max-width: 360px) {
         .title {
             display: none;
         }
