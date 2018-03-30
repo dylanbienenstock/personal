@@ -24,6 +24,7 @@ export class IcosahedronComponent implements AfterViewInit {
     private camera: THREE.PerspectiveCamera;
     private cameraTarget: THREE.Vector3;
     public scene: THREE.Scene;
+    public clock: THREE.Clock;
 
     public fieldOfView: number = 60;
     public nearClippingPane: number = 1;
@@ -141,6 +142,8 @@ export class IcosahedronComponent implements AfterViewInit {
         this.renderer.setClearColor(0x000000, 0);
         this.renderer.autoClear = true;
 
+        this.clock = new THREE.Clock();
+
         this.render();
     }
 
@@ -149,15 +152,17 @@ export class IcosahedronComponent implements AfterViewInit {
     }
 
     public render() {
-		this.speed = this.lerp(this.speed, 1, 0.015);
+        let timeMult = this.clock.getDelta() / (1 / 60);
 
-        this.icosahedron.rotation.x += 0.001 * this.speed;
-		this.icosahedron.rotation.y += 0.002 * this.speed;
+        this.speed = this.lerp(this.speed, 1, 0.015 * timeMult);
+
+        this.icosahedron.rotation.x += 0.001 * this.speed * timeMult;
+        this.icosahedron.rotation.y += 0.002 * this.speed * timeMult;
 		
         let destOpacity = this.phongMinOpacity + (1 - this.phongMinOpacity) * ((this.speed - 1) / this.fullOpacitySpeed);
 
 		this.icosahedron.material.opacity = 
-            this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15);
+            this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15 * timeMult);
             
         this.icosahedron.children[0].material.opacity =
             this.wireframeMaxOpacity - this.icosahedron.material.opacity * this.wireframeMaxOpacity;
