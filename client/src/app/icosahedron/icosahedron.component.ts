@@ -31,7 +31,11 @@ export class IcosahedronComponent implements AfterViewInit {
 
     public icosahedron: THREE.Object3D;
     public resizeTimeout: any;
-	public speed: number = 1;
+    public speed: number = 1;
+
+    public phongMinOpacity: number = 0.0;
+    public wireframeMaxOpacity: number = 0.4;
+    public fullOpacitySpeed: number = 10;
 
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
@@ -46,18 +50,18 @@ export class IcosahedronComponent implements AfterViewInit {
             vertexColors: THREE.VertexColors,
 			shininess: 0,
 			transparent: true,
-			opacity: 0.4
+			opacity: this.phongMinOpacity
         });
 
-        // var wireframeMaterial = new THREE.MeshBasicMaterial({
-        //     color: 0x000000,
-        //     wireframe: true,
-        //     transparent: true
-        // });
+        var wireframeMaterial = new THREE.MeshBasicMaterial({
+            color: 0x065D588,
+            wireframe: true,
+            transparent: true
+        });
 
         var geometry = new THREE.IcosahedronGeometry(50, 1);
 		this.icosahedron = new THREE.Mesh(geometry, phongMaterial);
-        // this.icosahedron.add(new THREE.Mesh(geometry, wireframeMaterial));
+        this.icosahedron.add(new THREE.Mesh(geometry, wireframeMaterial));
 
 		this.scene.add(this.icosahedron);
     }
@@ -86,8 +90,8 @@ export class IcosahedronComponent implements AfterViewInit {
             this.farClippingPane
         );
 
-        this.camera.position.x = 10;
-        this.camera.position.y = 10;
+        this.camera.position.x = 0;
+        this.camera.position.y = 0;
         this.camera.position.z = 100;
 
         this.camera.lookAt(this.icosahedron.position);
@@ -128,12 +132,16 @@ export class IcosahedronComponent implements AfterViewInit {
         this.icosahedron.rotation.x += 0.001 * this.speed;
 		this.icosahedron.rotation.y += 0.002 * this.speed;
 		
-		let destOpacity = 0.4 + 0.6 * ((this.speed - 1) / 10);
+        let destOpacity = this.phongMinOpacity + (1 - this.phongMinOpacity) * ((this.speed - 1) / this.fullOpacitySpeed);
+
 		this.icosahedron.material.opacity = 
-			this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15);
+            this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15);
+            
+        this.icosahedron.children[0].material.opacity =
+            this.wireframeMaxOpacity - this.icosahedron.material.opacity * this.wireframeMaxOpacity;
 
 		this.renderer.render(this.scene, this.camera);
-		this.onRender.emit(this.speed);
+        this.onRender.emit(1 - destOpacity);
         requestAnimationFrame(this.render);
     }
 
