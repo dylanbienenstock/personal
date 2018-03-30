@@ -34,7 +34,7 @@ export class IcosahedronComponent implements AfterViewInit {
     public speed: number = 1;
 
     public phongMinOpacity: number = 0.0;
-    public wireframeMaxOpacity: number = 0.4;
+    public wireframeMaxOpacity: number = 0.75;
     public fullOpacitySpeed: number = 10;
     public useOrthographic: boolean = true;
 
@@ -68,17 +68,27 @@ export class IcosahedronComponent implements AfterViewInit {
     }
 
     private createLight() {
-        var light = new THREE.PointLight(0xFFFFFF, 0.5, 1000);
+        var light = new THREE.PointLight(0xFFFFFF, 0.3, 1000);
         light.position.set(0, 0, 100);
         this.scene.add(light);
 
+        // this.scene.add(new THREE.AmbientLight(0x1D1D1D));
+
         var light2 = new THREE.PointLight(0xFFFFFF, 0.2, 1000);
-        light2.position.set(0, 100, 100);
+        light2.position.set(0, 150, 90);
         this.scene.add(light2);
 
         var light3 = new THREE.PointLight(0xFFFFFF, 0.2, 1000);
-        light3.position.set(100, 0, 100);
+        light3.position.set(0, -150, 90);
         this.scene.add(light3);
+
+        var light4 = new THREE.PointLight(0xFFFFFF, 0.2, 1000);
+        light4.position.set(150, 0, 90);
+        this.scene.add(light4);
+
+        var light5 = new THREE.PointLight(0xFFFFFF, 0.2, 1000);
+        light5.position.set(-150, 0, 90);
+        this.scene.add(light5);
     }
 
     private createCamera() {
@@ -152,8 +162,10 @@ export class IcosahedronComponent implements AfterViewInit {
         this.icosahedron.children[0].material.opacity =
             this.wireframeMaxOpacity - this.icosahedron.material.opacity * this.wireframeMaxOpacity;
 
-		this.renderer.render(this.scene, this.camera);
-        this.onRender.emit(1 - destOpacity);
+        // Emit title text opacity
+        this.onRender.emit(1 - ((destOpacity - this.phongMinOpacity) / (1 - this.phongMinOpacity)));
+
+        this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.render);
     }
 
