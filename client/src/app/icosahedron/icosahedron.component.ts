@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, Renderer, ViewChild, ElementRef, HostListener, EventEmitter, Output } from '@angular/core';
 import * as THREE from "three";
+import * as ifvisible from "ifvisible.js"
 
 @Component({
     selector: 'app-icosahedron',
@@ -11,7 +12,7 @@ import * as THREE from "three";
 // https://github.com/makimenko/angular-three-examples
 
 export class IcosahedronComponent implements AfterViewInit {
-	@Output() onRender: EventEmitter<number> = new EventEmitter();
+    @Output() onRender: EventEmitter<number> = new EventEmitter();
 
     constructor() {
         this.render = this.render.bind(this);
@@ -50,9 +51,9 @@ export class IcosahedronComponent implements AfterViewInit {
             color: 0xFFFFFF,
             flatShading: true,
             vertexColors: THREE.VertexColors,
-			shininess: 0,
-			transparent: true,
-			opacity: this.phongMinOpacity
+            shininess: 0,
+            transparent: true,
+            opacity: this.phongMinOpacity
         });
 
         var wireframeMaterial = new THREE.MeshBasicMaterial({
@@ -62,10 +63,10 @@ export class IcosahedronComponent implements AfterViewInit {
         });
 
         var geometry = new THREE.IcosahedronGeometry(50, 1);
-		this.icosahedron = new THREE.Mesh(geometry, phongMaterial);
+        this.icosahedron = new THREE.Mesh(geometry, phongMaterial);
         this.icosahedron.add(new THREE.Mesh(geometry, wireframeMaterial));
 
-		this.scene.add(this.icosahedron);
+        this.scene.add(this.icosahedron);
     }
 
     private createLight() {
@@ -95,7 +96,7 @@ export class IcosahedronComponent implements AfterViewInit {
     private createCamera() {
         let aspectRatio = this.getAspectRatio();
 
-        if (this. useOrthographic) {
+        if (this.useOrthographic) {
             this.camera = new THREE.OrthographicCamera(
                 100 / -2,
                 100 / 2,
@@ -122,7 +123,7 @@ export class IcosahedronComponent implements AfterViewInit {
 
     private getAspectRatio(): number {
         let height = this.canvas.clientHeight;
-        
+
         if (height === 0) {
             return 0;
         }
@@ -143,6 +144,7 @@ export class IcosahedronComponent implements AfterViewInit {
         this.renderer.autoClear = true;
 
         this.clock = new THREE.Clock();
+        this.clock.start();
 
         this.render();
     }
@@ -152,18 +154,20 @@ export class IcosahedronComponent implements AfterViewInit {
     }
 
     public render() {
+        if (!this.clock.running) return;
+
         let timeMult = this.clock.getDelta() / (1 / 60);
 
         this.speed = this.lerp(this.speed, 1, 0.015 * timeMult);
 
         this.icosahedron.rotation.x += 0.001 * this.speed * timeMult;
         this.icosahedron.rotation.y += 0.002 * this.speed * timeMult;
-		
+
         let destOpacity = this.phongMinOpacity + (1 - this.phongMinOpacity) * ((this.speed - 1) / this.fullOpacitySpeed);
 
-		this.icosahedron.material.opacity = 
-            this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15 * timeMult);
-            
+        this.icosahedron.material.opacity =
+            Math.min(1, this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15 * timeMult));
+
         this.icosahedron.children[0].material.opacity =
             this.wireframeMaxOpacity - this.icosahedron.material.opacity * this.wireframeMaxOpacity;
 
@@ -196,6 +200,19 @@ export class IcosahedronComponent implements AfterViewInit {
         this.createLight();
         this.createCamera();
         this.startRendering();
+
+        ifvisible.on("blur", function () {
+            if (this.clock) {
+                this.clock.stop();
+            }
+        }.bind(this));
+
+        ifvisible.on("focus", function () {
+            if (this.clock) {
+                this.clock.start();
+                this.render();
+            }
+        }.bind(this));
     }
 
     onClick(event: Event) {
