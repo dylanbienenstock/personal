@@ -2,6 +2,8 @@ import { Component, AfterViewInit, Renderer, ViewChild, ElementRef, HostListener
 import * as THREE from "three";
 import * as ifvisible from "ifvisible.js"
 
+import * as config from "./icosahedron.config.json";
+
 @Component({
     selector: 'app-icosahedron',
     templateUrl: './icosahedron.component.html',
@@ -35,11 +37,6 @@ export class IcosahedronComponent implements AfterViewInit {
     public resizeTimeout: any;
     public speed: number = 1;
 
-    public phongMinOpacity: number = 0.0;
-    public wireframeMaxOpacity: number = 0.75;
-    public fullOpacitySpeed: number = 10;
-    public useOrthographic: boolean = true;
-
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
     }
@@ -53,7 +50,7 @@ export class IcosahedronComponent implements AfterViewInit {
             vertexColors: THREE.VertexColors,
             shininess: 0,
             transparent: true,
-            opacity: this.phongMinOpacity
+            opacity: config["phongMinOpacity"]
         });
 
         var wireframeMaterial = new THREE.MeshBasicMaterial({
@@ -96,7 +93,7 @@ export class IcosahedronComponent implements AfterViewInit {
     private createCamera() {
         let aspectRatio = this.getAspectRatio();
 
-        if (this.useOrthographic) {
+        if (config["useOrthographic"]) {
             this.camera = new THREE.OrthographicCamera(
                 100 / -2,
                 100 / 2,
@@ -163,16 +160,16 @@ export class IcosahedronComponent implements AfterViewInit {
         this.icosahedron.rotation.x += 0.001 * this.speed * timeMult;
         this.icosahedron.rotation.y += 0.002 * this.speed * timeMult;
 
-        let destOpacity = this.phongMinOpacity + (1 - this.phongMinOpacity) * ((this.speed - 1) / this.fullOpacitySpeed);
+        let destOpacity = config["phongMinOpacity"] + (1 - config["phongMinOpacity"]) * ((this.speed - 1) / config["fullOpacitySpeed"]);
 
         this.icosahedron.material.opacity =
             Math.min(1, this.lerp(this.icosahedron.material.opacity, destOpacity, 0.15 * timeMult));
 
         this.icosahedron.children[0].material.opacity =
-            this.wireframeMaxOpacity - this.icosahedron.material.opacity * this.wireframeMaxOpacity;
+            config["wireframeMaxOpacity"] - this.icosahedron.material.opacity * config["wireframeMaxOpacity"];
 
         // Emit title text opacity
-        this.onRender.emit(1 - ((destOpacity - this.phongMinOpacity) / (1 - this.phongMinOpacity)));
+        this.onRender.emit(1 - ((destOpacity - config["phongMinOpacity"]) / (1 - config["phongMinOpacity"])));
 
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.render);
@@ -219,6 +216,6 @@ export class IcosahedronComponent implements AfterViewInit {
         event.preventDefault();
         event.stopPropagation();
 
-        this.speed += 2;
+        this.speed += config["speedIncrement"];
     }
 }
