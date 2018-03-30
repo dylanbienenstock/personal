@@ -10,6 +10,15 @@
                 <div class="project-subsection-text-tags"> 
                     <div *ngFor="let tag of projectSubsection.tags">{{ tag }}</div>
                 </div>
+
+                <div class="project-subsection-text-spacer"></div>
+
+                <div class="project-subsection-text-link-container">
+                    <div *ngFor="let link of projectSubsection.links"
+                    class="project-subsection-text-link">
+                        <a target="_blank" [href]="link.url">{{ link.text }}</a>
+                    </div>
+                </div>
             </div>
 
             <app-projects-section-screenshot

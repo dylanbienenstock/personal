@@ -9,6 +9,16 @@
             "PGP Core",
             "Entity Framework",
             "Postgres"
+        ],
+        "links": [
+            {
+                "text": "View on Github",
+                "url": "https://github.com/dylanbienenstock/xpgp/"
+            },
+            {
+                "text": "View live",
+                "url": "http://xpgp.io/"
+            }
         ]
     },
     {
@@ -21,6 +31,16 @@
             "Express",
             "Socket.IO",
             "Pixi.js"
+        ],
+        "links": [
+            {
+                "text": "View on Github",
+                "url": "https://github.com/dylanbienenstock/warp/"
+            },
+            {
+                "text": "View live",
+                "url": "https://warpio.herokuapp.com/"
+            }
         ]
     },
     {
@@ -32,6 +52,16 @@
             "Django",
             "jQuery",
             "RxNorm API"
+        ],
+        "links": [
+            {
+                "text": "View on Github",
+                "url": "https://github.com/dylanbienenstock/canitake/"
+            },
+            {
+                "text": "What's RxNorm?",
+                "url": "https://www.nlm.nih.gov/research/umls/rxnorm/"
+            }
         ]
     },
     {
@@ -42,6 +72,20 @@
             "Javascript",
             "THREE.js",
             "jQuery"
+        ],
+        "links": [
+            {
+                "text": "View on Github",
+                "url": "https://github.com/dylanbienenstock/puzzlesnake/"
+            },
+            {
+                "text": "View live",
+                "url": "https://puzzlesnake.herokuapp.com/"
+            },
+            {
+                "text": "Shapes to try",
+                "url": "https://www.pinterest.com/chloelee395891/rubiks-twist-or-smiggle-snake-puzzle-shape-creatio/"
+            }
         ]
     }
 ]

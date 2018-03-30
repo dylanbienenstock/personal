@@ -34,6 +34,8 @@
                 }
 
                 .project-subsection-text {
+                    display: flex;
+                    flex-flow: column nowrap;
                     width: 400px;
                     margin-right: 32px;
 
@@ -47,6 +49,8 @@
                     }
 
                     .project-subsection-text-tags {
+                        padding: 0 48px;
+
                         div {
                             display: inline-block;
                             margin-right: 8px;
@@ -59,6 +63,42 @@
 
                             &:last-child {
                                 margin-right: 0;
+                            }
+                        }
+                    }
+
+                    .project-subsection-text-spacer {
+                        flex-grow: 1;
+                    }
+
+                    .project-subsection-text-link-container {
+                        opacity: 0.6;
+                        margin-bottom: 8px;
+
+                        .project-subsection-text-link {
+                            font-size: 0;
+                            
+                            &:after {
+                                content: "•";
+                                font-size: initial !important;                                
+                                color: $background-color;
+                                margin: 0 5px;
+                            }
+                            
+                            &:last-child {
+                                &:after {
+                                    content: "" !important;
+                                }
+                            }
+
+                            a {
+                                font-size: initial !important;
+                                color: $background-color !important;                                
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
                         }
                     }
@@ -86,13 +126,18 @@
                         padding-right: 32px;
                         margin-left: 0 !important;                        
                         margin-right: 0 !important;
-                        margin-bottom: 32px;                        
+                        margin-bottom: 8px;                        
                         box-sizing: border-box;
 
                         h1 {
                             text-align: left;
                             margin-left: 16px;
-                        }                        
+                        }
+                        
+                        .project-subsection-text-link-container {
+                            margin-top: 32px;
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }
