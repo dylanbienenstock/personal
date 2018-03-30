@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as skillsJson from "skills.json";
+import * as config from "./skills-section.config.json";
 
 @Component({
     selector: 'app-skills-section',
@@ -8,7 +8,7 @@ import * as skillsJson from "skills.json";
     styleUrls: ['./skills-section.component.scss']
 })
 export class SkillsSectionComponent implements OnInit {
-    skillSubsections = skillsJson;
+    skillSubsections = config;
 
     constructor()
     {

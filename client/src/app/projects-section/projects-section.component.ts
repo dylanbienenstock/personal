@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as projectsJson from "projects.json";
+import * as config from "./projects-section.config.json";
 
 @Component({
     selector: 'app-projects-section',
@@ -8,7 +8,7 @@ import * as projectsJson from "projects.json";
     styleUrls: ['./projects-section.component.scss']
 })
 export class ProjectsSectionComponent implements OnInit {
-    projectSubsections = projectsJson;
+    projectSubsections = config;
 
     constructor() { }
 
