@@ -36,6 +36,7 @@ export class IcosahedronComponent implements AfterViewInit {
     public phongMinOpacity: number = 0.0;
     public wireframeMaxOpacity: number = 0.4;
     public fullOpacitySpeed: number = 10;
+    public useOrthographic: boolean = true;
 
     private get canvas(): HTMLCanvasElement {
         return this.canvasRef.nativeElement;
@@ -83,12 +84,23 @@ export class IcosahedronComponent implements AfterViewInit {
     private createCamera() {
         let aspectRatio = this.getAspectRatio();
 
-        this.camera = new THREE.PerspectiveCamera(
-            this.fieldOfView,
-            aspectRatio,
-            this.nearClippingPane,
-            this.farClippingPane
-        );
+        if (this. useOrthographic) {
+            this.camera = new THREE.OrthographicCamera(
+                100 / -2,
+                100 / 2,
+                100 / 2,
+                100 / -2,
+                1,
+                1000
+            );
+        } else {
+            this.camera = new THREE.PerspectiveCamera(
+                this.fieldOfView,
+                aspectRatio,
+                this.nearClippingPane,
+                this.farClippingPane
+            );
+        }
 
         this.camera.position.x = 0;
         this.camera.position.y = 0;
