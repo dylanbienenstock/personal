@@ -19,8 +19,10 @@
                 min-height: 200px;
             }
 
-            * {
+            input[type=text], textarea {
                 cursor: pointer;
+                resize: none;
+
                 display: block;
                 min-width: 400px;
                 padding: 10px 14px;
@@ -31,19 +33,40 @@
                 font-size: 20px;
                 font-family: "Noto Sans", sans-serif;
                 color: $text-color;
-                background-color: rgba($text-color, 0); 
+                background-color: transparent;
                 transition: background 250ms ease;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
 
                 &:hover {
                     background-color: rgba($text-color, 0.1);
                 }
 
                 &:active {
-                    background-color: rgba($text-color, 0.15);           
+                    background-color: rgba($text-color, 0.2);           
+                }
+            }
+
+            div {
+                text-align: right;
+
+                input[type=submit] {
+                    cursor: pointer;
+                    display: inline-block;
+                    padding: 10px 14px;                    
+                    outline: 0;
+                    border: 0;
+                    border-radius: 8px;
+                    font-size: 20px;
+                    color: $accent-color;
+                    background-color: transparent;                    
+                    transition: background 250ms ease;
+
+                    &:hover {
+                        background-color: rgba($text-color, 0.1);
+                    }
+
+                    &:active {
+                        background-color: rgba($text-color, 0.15);           
+                    }
                 }
             }
         }
