@@ -16,6 +16,7 @@ import { ScrollService } from './scroll.service';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { FooterComponent } from './footer/footer.component';
 import { FooterNoteComponent } from './footer-note/footer-note.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FooterNoteComponent } from './footer-note/footer-note.component';
     FooterNoteComponent
   ],
   imports: [
-	BrowserModule,
+    BrowserModule,
+    FormsModule
   ],
   providers: [
 	  Title,
