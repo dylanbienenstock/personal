@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-footer-note',
+  templateUrl: './footer-note.component.html',
+  styleUrls: ['./footer-note.component.scss']
+})
+export class FooterNoteComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
