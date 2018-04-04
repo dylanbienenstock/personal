@@ -1,7 +1,7 @@
 <form id="note-form" (submit)="onSubmit($event)">
-    <input type="text" id="name" placeholder="Your name">
-    <input type="text" id="email" placeholder="Email address">
-    <textarea form="note-form" id="note" placeholder="Note"></textarea>
+    <input type="text" placeholder="Your name" [(ngModel)]="note.sender" name="sender">
+    <input type="text" placeholder="Email address" [(ngModel)]="note.email" name="email">
+    <textarea form="note-form" placeholder="Note" [(ngModel)]="note.text" name="text"></textarea>
 
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">

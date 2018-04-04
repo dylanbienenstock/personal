@@ -5,8 +5,15 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './footer-note.component.html',
     styleUrls: ['./footer-note.component.scss']
 })
+
 export class FooterNoteComponent implements OnInit {
     constructor() { }
+
+    note: Object = {
+        sender: "",
+        email: "",
+        text: ""
+    };
 
     ngOnInit() {
     }
