@@ -14,6 +14,7 @@ import { ProjectsSectionComponent } from './projects-section/projects-section.co
 import { ProjectsSectionScreenshotComponent } from './projects-section-screenshot/projects-section-screenshot.component';
 import { ScrollService } from './scroll.service';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
     AboutSectionComponent,
     SkillsSectionComponent,
     ProjectsSectionComponent,
-    ProjectsSectionScreenshotComponent
+    ProjectsSectionScreenshotComponent,
+    FooterComponent
   ],
   imports: [
 	BrowserModule,
