@@ -8,7 +8,7 @@
 
         h1 {
             font-size: 32px;
-            margin-bottom: 32px;
+            margin-bottom: 64px;
         }
 
         h2 {
@@ -17,15 +17,22 @@
             text-align: left;
         }
 
+		.copyright {
+			font-size: 18px;
+			color: rgba($text-color, 0.4);
+		}
+
         .subsection-container {
             display: flex;
-            flex-flow: row nowrap;
+			flex-flow: row nowrap;
+			margin-bottom: 64px + 32px;
             
             .subsection {
                 margin-left: 16px;
                 margin-right: 16px;
                 vertical-align: top;
-                text-align: center;
+				text-align: center;
+				width: 400px;
 
                	&:first-child {
                     margin-left: 0;
@@ -42,7 +49,6 @@
                     background-color: rgba($text-color, 0.1);
                     padding: 10px 14px;
                     border-radius: 8px;        
-                    width: 400px;        
                     font-size: 20px;
                     line-height: 1.6;
                     color: rgba($text-color, 0.4);
@@ -57,19 +63,53 @@
                     }
                 }
             }
+		}
 
-            @media (max-width: 900px) {
-                flex-flow: column nowrap;
+		@media (max-width: 1264px) {
+			.subsection-container {
+				.subsection {
+					width: 300px;
+				}
+			}
 
-                div {
-                    margin-right: 0;
-                    margin-bottom: 32px;
+			@media (max-width: 964px) {
+				.subsection-container {
+					flex-flow: column nowrap;
+					
+					.subsection {
+						width: 400px;
+						margin-left: 0;
+						margin-right: 0;
+						margin-bottom: 64px;
 
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
-    }
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				.copyright {
+					max-width: 400px;
+				}
+
+				@include mobile {
+					.subsection-container {
+						width: 100vw;
+
+						.subsection {
+							width: 100vw;
+							padding-left: 32px;
+							padding-right: 32px;
+							box-sizing: border-box;
+						}
+					}
+
+					.copyright {
+						padding: 0 32px;
+						max-width: 100vw;
+					}
+				}
+			}
+		}
+	}
 }
