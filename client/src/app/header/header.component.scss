@@ -35,6 +35,8 @@
 
     .links {
         .links-inner {
+			@include noselect;
+
             @media (min-width: 335px) {
                 @include center-vertical;
             }
@@ -42,8 +44,6 @@
             display: inline-block;            
 
             a {
-                @include noselect;
-
 				cursor: pointer;
 
 				padding: 6px 12px;
