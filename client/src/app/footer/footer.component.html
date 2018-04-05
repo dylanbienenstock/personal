@@ -1,20 +1,22 @@
 <div class="container">
     <h1>Contact Me</h1>
 
-    <div>
-        <h2>Send me a note</h2>
-        <app-footer-note></app-footer-note>
-    </div>
+    <div class="sections">
+        <div>
+            <h2>Send me a note</h2>
+            <app-footer-note></app-footer-note>
+        </div>
 
-    <div>
-        <h2>Contact Information</h2>
-        
-        <div class="contact-info">
-            <p class="name">Dylan Bienenstock</p>
-            <p><span *ngFor="let char of email">{{ char }}</span></p>
-            <p><span *ngFor="let char of tel">{{ char }}</span></p>
+        <div>
+            <h2>Contact Information</h2>
+            
+            <div class="contact-info">
+                <p class="name">Dylan Bienenstock</p>
+                <p><span *ngFor="let char of email">{{ char }}</span></p>
+                <p><span *ngFor="let char of tel">{{ char }}</span></p>
 
-            <p class="contact-info-note">Email is prefered but feel free to call me between noon and 8:00 PM.</p>
+                <p class="contact-info-note">Email is prefered but feel free to call me between noon and 8:00 PM.</p>
+            </div>
         </div>
     </div>
 </div>
