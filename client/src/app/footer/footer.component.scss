@@ -28,12 +28,22 @@
             }
 
             .contact-info {
+                box-sizing: border-box;
+                background-color: rgba($text-color, 0.1);
+                padding: 10px 14px;
+                border-radius: 8px;        
+                width: 400px;        
                 font-size: 20px;
                 line-height: 1.6;
                 color: rgba($text-color, 0.5);
 
                 .name {
                     color: $accent-color;
+                }
+
+                .contact-info-note {
+                    margin-top: 16px;
+                    font-size: 18px;
                 }
             }
         }
