@@ -1,0 +1,11 @@
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Size</th>
+	</tr>
+
+	<tr *ngFor="let download of downloads">
+		<td>{{ download.name }}</td>
+		<td>{{ download.size }} KB</td>
+	</tr>
+</table>
