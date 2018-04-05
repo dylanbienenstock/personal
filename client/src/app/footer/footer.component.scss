@@ -17,33 +17,51 @@
             text-align: left;
         }
 
-        div {
-            display: inline-block;
-            margin-right: 32px;
-            vertical-align: top;
-            text-align: left;
+        .sections {
+            display: flex;
+            flex-flow: row nowrap;
+            
+            div {
+                display: inline-block;
+                margin-right: 32px;
+                vertical-align: top;
+                text-align: left;
 
-            &:last-child {
-                margin-right: 0;
-            }
-
-            .contact-info {
-                box-sizing: border-box;
-                background-color: rgba($text-color, 0.1);
-                padding: 10px 14px;
-                border-radius: 8px;        
-                width: 400px;        
-                font-size: 20px;
-                line-height: 1.6;
-                color: rgba($text-color, 0.5);
-
-                .name {
-                    color: $accent-color;
+                &:last-child {
+                    margin-right: 0;
                 }
 
-                .contact-info-note {
-                    margin-top: 16px;
-                    font-size: 18px;
+                .contact-info {
+                    box-sizing: border-box;
+                    background-color: rgba($text-color, 0.1);
+                    padding: 10px 14px;
+                    border-radius: 8px;        
+                    width: 400px;        
+                    font-size: 20px;
+                    line-height: 1.6;
+                    color: rgba($text-color, 0.4);
+
+                    .name {
+                        color: $accent-color;
+                    }
+
+                    .contact-info-note {
+                        margin-top: 16px;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            @media (max-width: 900px) {
+                flex-flow: column nowrap;
+
+                div {
+                    margin-right: 0;
+                    margin-bottom: 32px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
