@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterNoteComponent implements OnInit {
     constructor() { }
 
-    note: Object = {
+    note = {
         sender: "",
         email: "",
         text: ""
