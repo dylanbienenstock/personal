@@ -86,6 +86,8 @@
                 }
 
                 @media (max-width: 964px) {
+                    height: auto;
+
                     .subsection-container {
                         flex-flow: column nowrap;
                         
@@ -102,6 +104,7 @@
                     }
 
                     .copyright {
+                        margin-top: 32px;
                         max-width: 400px;
                     }
 
@@ -109,11 +112,12 @@
                         .subsection-container {
                             width: 100vw;
 
+                            padding-left: 32px !important;
+                            padding-right: 32px  !important;
+                            box-sizing: border-box;
+
                             .subsection {
-                                width: 100vw;
-                                padding-left: 32px;
-                                padding-right: 32px;
-                                box-sizing: border-box;
+                                width: 100%;
                             }
                         }
 
