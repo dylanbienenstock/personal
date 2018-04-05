@@ -17,6 +17,7 @@ import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { FooterComponent } from './footer/footer.component';
 import { FooterNoteComponent } from './footer-note/footer-note.component';
 import { FormsModule } from '@angular/forms';
+import { SocialComponent } from './social/social.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     ProjectsSectionComponent,
     ProjectsSectionScreenshotComponent,
     FooterComponent,
-    FooterNoteComponent
+    FooterNoteComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,
