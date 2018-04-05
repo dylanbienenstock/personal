@@ -4,11 +4,30 @@
 
 	.container {
 		img {
+			cursor: pointer;
 			width: 42px;
 			margin-right: 16px;
+			transition: opacity 250ms ease, 
+						transform 250ms ease-in-out;
 
 			&:last-child {
 				margin-right: 0;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		.theme-footer {
+			opacity: 0.12;
+
+			&:hover {
+				opacity: 0.22;
+			}
+
+			&:active {
+				opacity: 0.32;
 			}
 		}
 	}
