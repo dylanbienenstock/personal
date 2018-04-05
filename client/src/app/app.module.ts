@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FooterNoteComponent } from './footer-note/footer-note.component';
 import { FormsModule } from '@angular/forms';
 import { SocialComponent } from './social/social.component';
+import { FooterDownloadsComponent } from './footer-downloads/footer-downloads.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SocialComponent } from './social/social.component';
     ProjectsSectionScreenshotComponent,
     FooterComponent,
     FooterNoteComponent,
-    SocialComponent
+    SocialComponent,
+    FooterDownloadsComponent
   ],
   imports: [
     BrowserModule,
