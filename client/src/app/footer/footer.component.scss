@@ -16,5 +16,26 @@
             margin-bottom: 8px;
             text-align: left;
         }
+
+        div {
+            display: inline-block;
+            margin-right: 32px;
+            vertical-align: top;
+            text-align: left;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .contact-info {
+                font-size: 20px;
+                line-height: 1.6;
+                color: rgba($text-color, 0.5);
+
+                .name {
+                    color: $accent-color;
+                }
+            }
+        }
     }
 }

@@ -8,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
     constructor() { }
 
-    email: string = "db@dylanbienenstock.com";
-    emailArray: string[];
+    email: string[] = "db@dylanbienenstock.com".split("");
+    tel: string[] = "(206) 915 5538".split("");
 
     ngOnInit() {
-        this.emailArray = this.email.split("");
     }
 }

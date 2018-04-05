@@ -10,10 +10,11 @@
         <h2>Contact Information</h2>
         
         <div class="contact-info">
-            <p>Dylan Bienenstock</p>
-            <p class="email">
-                <span *ngFor="let char of emailArray">{{ char }}</span>
-            </p>
+            <p class="name">Dylan Bienenstock</p>
+            <p><span *ngFor="let char of email">{{ char }}</span></p>
+            <p><span *ngFor="let char of tel">{{ char }}</span></p>
+
+            <p>Email is prefered but feel free to call me between noon and 8:00 PM.</p>
         </div>
     </div>
 </div>
