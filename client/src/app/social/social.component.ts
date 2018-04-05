@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SocialComponent implements OnInit {
 	constructor() { }
 
+	@Input() theme: string;
 
 	ngOnInit() {
 	}
