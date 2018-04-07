@@ -4,8 +4,10 @@
 		<th>Size</th>
 	</tr>
 
-	<tr *ngFor="let download of downloads">
+    <tr *ngFor="let download of downloads"
+    (click)="downloadFile(download.name)"
+    class="download">
 		<td>{{ download.name }}</td>
-		<td>{{ download.size }} KB</td>
+		<td>{{ download.size }}</td>
 	</tr>
 </table>

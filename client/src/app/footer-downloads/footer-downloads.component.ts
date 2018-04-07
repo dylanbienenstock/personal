@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
 	selector: 'app-footer-downloads',
@@ -6,18 +7,17 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./footer-downloads.component.scss']
 })
 export class FooterDownloadsComponent implements OnInit {
-	constructor() { }
+	constructor(private _httpService: HttpService) { }
 
-	downloads: Object[] = [
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-		{ name: "fake_download.txt", size: Math.round(Math.random() * 1023) },
-	];
+	downloads: any[];
 
 	ngOnInit() {
-	}
+        this._httpService.getDownloads().subscribe((res: any) => {
+            this.downloads = res;
+        });
+    }
+    
+    downloadFile(fileName) {
+        this._httpService.downloadFile(fileName);
+    }
 }

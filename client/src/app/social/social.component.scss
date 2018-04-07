@@ -1,9 +1,13 @@
+@import "~mixins.scss";
+
 :host {
 	display: inline-block;
 	font-size: 0;
 
 	.container {
 		img {
+            @include noselect;
+            
 			cursor: pointer;
 			width: 42px;
 			margin-right: 16px;

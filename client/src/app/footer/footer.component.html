@@ -1,36 +1,40 @@
 <div class="container">
-    <h1>Let's Get in Touch</h1>
+    <div class="container-inner">
+        <h1>Let's Get in Touch</h1>
 
-    <div class="subsection-container">
-        <div class="subsection">
-            <h2>Send Me a Note</h2>
-            <app-footer-note></app-footer-note>
-        </div>
+        <div class="subsection-container">
+            <div class="subsection">
+                <h2>Send Me a Note</h2>
+                <app-footer-note></app-footer-note>
+            </div>
 
-        <div class="subsection">
-            <h2>Contact Information</h2>
+            <div class="subsection">
+                <h2>Contact Information</h2>
+                
+                <div class="contact-info">
+                    <p class="name">Dylan Bienenstock</p>
+                    <p><span *ngFor="let char of email">{{ char }}</span></p>
+                    <p><span *ngFor="let char of tel">{{ char }}</span></p>
+
+                    <p class="contact-info-note">
+                        Email is preferred but feel free to call me between noon and 8:00 PM.
+                    </p>				
+                </div>
+                
+                <app-social theme="footer"></app-social>			
+            </div>
             
-            <div class="contact-info">
-                <p class="name">Dylan Bienenstock</p>
-                <p><span *ngFor="let char of email">{{ char }}</span></p>
-                <p><span *ngFor="let char of tel">{{ char }}</span></p>
+            <div class="subsection">
+                <h2>Downloads</h2>
 
-				<p class="contact-info-note">
-					Email is preferred but feel free to call me between noon and 8:00 PM.
-				</p>				
-			</div>
-			
-			<app-social theme="footer"></app-social>			
-		</div>
-		
-		<div class="subsection">
-			<h2>Downloads</h2>
+                <app-footer-downloads></app-footer-downloads>
+            </div>
+        </div>
+        
+        <div class="spacer"></div>
 
-			<app-footer-downloads></app-footer-downloads>
-		</div>
-	</div>
-	
-	<p class="copyright">
-		Copyright Dylan Bienenstock 2018&nbsp;&copy; &mdash; made with Angular &amp; Node
-	</p>
+        <p class="copyright">
+            Copyright Dylan Bienenstock 2018&nbsp;&copy; &mdash; made with Angular &amp; Node
+        </p>
+    </div>
 </div>
