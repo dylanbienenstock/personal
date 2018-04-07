@@ -26,6 +26,10 @@ app.get("/downloads", (req, res) => {
     });
 });
 
+app.get("/downloads/:fileName", (req, res) => {
+    res.download(path.join(downloadsPath, req.params.fileName));
+});
+
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client/dist/index.html"));
 });

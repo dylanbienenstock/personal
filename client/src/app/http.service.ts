@@ -8,4 +8,8 @@ export class HttpService {
     getDownloads() {
         return this._httpClient.get("downloads");
     }
+
+    downloadFile(fileName: string) {
+        window.location.href = `downloads/${fileName}`;
+    }
 }

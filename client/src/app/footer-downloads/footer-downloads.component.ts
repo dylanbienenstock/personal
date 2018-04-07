@@ -15,5 +15,9 @@ export class FooterDownloadsComponent implements OnInit {
         this._httpService.getDownloads().subscribe((res: any) => {
             this.downloads = res;
         });
-	}
+    }
+    
+    downloadFile(fileName) {
+        this._httpService.downloadFile(fileName);
+    }
 }
