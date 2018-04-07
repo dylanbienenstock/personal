@@ -1,5 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { FooterNoteComponent } from './footer-note/footer-note.component';
 import { FormsModule } from '@angular/forms';
 import { SocialComponent } from './social/social.component';
 import { FooterDownloadsComponent } from './footer-downloads/footer-downloads.component';
+
+import { HttpService } from './http.service';
 
 
 @NgModule({
@@ -40,12 +43,14 @@ import { FooterDownloadsComponent } from './footer-downloads/footer-downloads.co
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
 	  Title,
 	  ScrollToService,
-	  ScrollService
+      ScrollService,
+      HttpService
   ],
   bootstrap: [AppComponent]
 })
