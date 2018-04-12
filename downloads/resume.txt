@@ -19,7 +19,7 @@ Triple Black Belt (95%+ on all exams)
 Bellevue, Washington
 Graduated April 2018
 
-Rigorous 14 week web development boot camp. Wrote and debugged code for 60+ hours per week. Praticed algorithms and data structures every morning. Gained hands-on experience with MEAN stack, C# stack, and Python stack by completing multiple projects daily. Tri-weekly exams lasted including wireframing and deployment on AWS.
+Rigorous 14 week web development boot camp. Wrote and debugged code for 60+ hours per week. Practiced algorithms and data structures every morning. Gained hands-on experience with MEAN stack, C# stack, and Python stack by completing multiple projects daily. Tri-weekly exams lasted including wireframing and deployment on AWS.
 
 
 EXPERIENCE
