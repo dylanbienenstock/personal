@@ -9,7 +9,8 @@ export class TelComponent implements OnInit {
 
     constructor() { }
 
-    tel: string[] = "(206) 915 5538".split("");
+    tel: string = "(206) 915 5538";
+    telSplit: string[] = this.tel.split("");
 
     ngOnInit() {
     }
