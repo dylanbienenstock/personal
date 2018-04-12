@@ -1,0 +1,76 @@
+Dylan Bienenstock
+Web Developer
+
+1014 151st PL NE
+Bellevue, Washington
+db@dylanbienenstock.com
+(206) 915 5538
+
+
+ABOUT ME
+‾‾‾‾‾‾‾‾
+Predominantly self-taught full stack web developer from age 10. Focused primarily on user interface / experience design. Passionate about privacy. Skills include analytical problem solving, excellent communication, and consistency.
+
+
+EDUCATION
+‾‾‾‾‾‾‾‾‾
+Coding Dojo
+Triple Black Belt (95%+ on all exams)
+Bellevue, Washington
+Graduated April 2018
+
+Rigorous 14 week web development boot camp. Wrote and debugged code for 60+ hours per week. Praticed algorithms and data structures every morning. Gained hands-on experience with MEAN stack, C# stack, and Python stack by completing multiple projects daily. Tri-weekly exams lasted including wireframing and deployment on AWS.
+
+
+EXPERIENCE
+‾‾‾‾‾‾‾‾‾‾
+iD Tech Camps
+Programming Instructor
+Stanford, California
+
+Instructed students age 7-18 in a semi-structured environment. Led classes in 3D Level Design, Java, Python, Raspberry Pi, and Tynker. Students completed fully functional, self-directed projects by the end of each week.
+
+PROJECTS
+‾‾‾‾‾‾‾‾
+• XPGP
+Online social PGP keychain. Allows for easy key generation, sharing, and lookup. Presents functionality similar to that of GPG Keychain in an approachable, accessible platform.
+
+• Warp
+Multiplayer space-shooter game with massive persistent galaxy. Contains hundreds of networked physics objects optimized using quadtrees.
+
+• CanITake
+Provides reliable information about drug interactions in a highly readable format. Aggregates data from multiple APIs, including RxNorm (US National Library of Medicine.)
+
+• Puzzle Snake
+Simulates an interactive 3D puzzle using three.js. Allows the user to import and export configurations as a string of numbers. Based on the popular Rubik's Twist.
+
+SKILLS	
+‾‾‾‾‾‾
+Technologies:
+• Angular 5
+• NodeJS + Express
+• Socket.IO
+• jQuery
+• ASP .NET Core
+• MongoDB
+• PostgreSQL
+• Django
+
+Languages:
+• JavaScript
+• TypeScript
+• CSS / SCSS
+• C# .NET
+• Python
+• Java
+• Lua
+• C / C++
+
+Miscellaneous:
+• UI / UX Design
+• Game Engine Design
+• Graphic Design
+• 3D Level Design
+• 3D Modeling
+• Electrical Engineering
+• iOS / Android Development
