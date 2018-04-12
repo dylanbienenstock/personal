@@ -18,10 +18,10 @@
             text-align: left;
             margin: 16px 0 64px 0;
 
-            a {
+            a, .link {
                 cursor: pointer;
                 color: $background-color !important;
-                text-decoration: underline $accent-color !important;
+                text-decoration: underline;
                 font-weight: bold;
             }
         }
