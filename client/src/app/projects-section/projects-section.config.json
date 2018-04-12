@@ -23,7 +23,7 @@
     },
     {
         "name": "Warp",
-        "description": "Multiplayer space-shooter game with massive persistent galaxy. Contains hundreds of networked physics objects optimized using quadtrees.",
+        "description": "Multiplayer space-shooter game with massive procedurally generated galaxy. Contains hundreds of networked physics objects optimized using quadtrees.",
         "image": "assets/img/screenshot/warp.png",
         "tags": [
             "Javascript",

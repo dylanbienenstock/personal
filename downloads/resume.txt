@@ -36,7 +36,7 @@ PROJECTS
 Online social PGP keychain. Allows for easy key generation, sharing, and lookup. Presents functionality similar to that of GPG Keychain in an approachable, accessible platform.
 
 • Warp
-Multiplayer space-shooter game with massive persistent galaxy. Contains hundreds of networked physics objects optimized using quadtrees.
+Multiplayer space-shooter game with massive procedurally generated galaxy. Contains hundreds of networked physics objects optimized using quadtrees.
 
 • CanITake
 Provides reliable information about drug interactions in a highly readable format. Aggregates data from multiple APIs, including RxNorm (US National Library of Medicine.)
