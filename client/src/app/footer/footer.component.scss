@@ -70,6 +70,16 @@
                             color: $accent-color;
                         }
 
+                        .link {
+                            cursor: pointer;
+                            color: rgba($text-color, 0.4);
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: underline !important;
+                            }
+                        }
+
                         .contact-info-note {
                             margin-top: 16px;
                             font-size: 18px;

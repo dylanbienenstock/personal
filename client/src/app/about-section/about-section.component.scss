@@ -21,8 +21,12 @@
             a, .link {
                 cursor: pointer;
                 color: $background-color !important;
-                text-decoration: underline;
+                text-decoration: none;
                 font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline !important;
+                }
             }
         }
     }
