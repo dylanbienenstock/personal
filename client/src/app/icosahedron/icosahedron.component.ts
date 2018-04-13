@@ -193,7 +193,11 @@ export class IcosahedronComponent implements AfterViewInit {
         let canvasBottom = this.canvas.offsetTop + this.canvas.offsetHeight / 2;
         let isInViewport = scrollY <= canvasBottom;
 
-        
+        if (isInViewport) {
+            this.resumeRendering();
+        } else {
+            this.pauseRendering();
+        }
     }
 
     public resizeRenderer() {
