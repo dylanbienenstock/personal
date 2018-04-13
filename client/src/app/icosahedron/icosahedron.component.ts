@@ -184,6 +184,18 @@ export class IcosahedronComponent implements AfterViewInit {
         }, 100);
     }
 
+    @HostListener("window:scroll", ["$event"])
+    onScrollEvent($event) {
+        let scrollY = window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop || 0;
+
+        let canvasBottom = this.canvas.offsetTop + this.canvas.offsetHeight / 2;
+        let isInViewport = scrollY <= canvasBottom;
+
+        
+    }
+
     public resizeRenderer() {
         this.canvas.style.width = "100%";
         this.canvas.style.height = "100%";
