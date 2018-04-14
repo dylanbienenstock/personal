@@ -44,12 +44,18 @@ export class FooterNoteComponent implements OnInit {
 
     onSubmit($event) {
         $event.preventDefault();
+
         this.showLoader(true);
     }
 
     onClear($event) {
         $event.preventDefault();
-        this.showLoader(false);
+
+        this.note = {
+            sender: "",
+            email: "",
+            text: ""
+        };
     }
 
     showLoader(visible: boolean) {
