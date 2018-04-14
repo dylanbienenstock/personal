@@ -3,18 +3,19 @@
 $red: #d64444;
 
 :host {
+    .disabled {
+        input,
+        textarea,
+        button,
+        &:not(form) {
+            background-color: rgba($text-color, 0.05) !important;
+            pointer-events: none;
+        }
+    }
+
     form {
         display: flex;
         flex-flow: column nowrap;
-
-        &.disabled {
-            input,
-            textarea,
-            button {
-                background-color: rgba($text-color, 0.05) !important;
-                pointer-events: none;
-            }
-        }
 
         .ng-touched.ng-invalid {
             border: 1px solid $red;

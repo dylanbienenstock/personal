@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 
 export class FooterNoteComponent implements OnInit {
+    constructor(private _httpService: HttpService) { }
 
     @ViewChild("sendButton")
     private sendButtonRef: ElementRef;
@@ -38,15 +39,19 @@ export class FooterNoteComponent implements OnInit {
         this.loaderStyle.width = this.sendButton.clientHeight + "px";
         this.loaderStyle.transform = `translateX(${translateX}px)`;
 
+        let emailRegex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
         this.noteForm = new FormGroup({
             "sender": new FormControl("", [
                 Validators.required
             ]),
             "email": new FormControl("", [
-                Validators.required                
+                Validators.required,
+                Validators.pattern(emailRegex)
             ]),
             "text": new FormControl("", [
-                Validators.required
+                Validators.required,
+                Validators.maxLength(256)
             ])
         });
     }

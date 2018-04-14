@@ -20,11 +20,9 @@
 
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
-        <button #sendButton class="send">
+        <button #sendButton class="send" [ngClass]="noteForm.valid ? '' : 'disabled'">
             <img [ngStyle]="loaderStyle" src="assets/loading.svg">
-            <div [ngStyle]="sendButtonTextStyle">Send</div>
+            <div [ngStyle]="sendButtonTextStyle" >Send</div>
         </button>
     </div>
 </form>
-
-{{ this.noteForm.value | json }}
