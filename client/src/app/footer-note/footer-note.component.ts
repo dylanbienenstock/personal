@@ -59,7 +59,7 @@ export class FooterNoteComponent implements OnInit {
     onSubmit($event) {
         $event.preventDefault();
 
-        this.showLoader(true);
+        this.sendEmail();
     }
 
     onClear($event) {
@@ -76,5 +76,16 @@ export class FooterNoteComponent implements OnInit {
         this.formDisabled = visible;
         this.loaderStyle.opacity = visible ? 1 : 0;
         this.sendButtonTextStyle.opacity = visible ? 0 : 1;
+    }
+
+    sendEmail() {
+        if (!this.noteForm.valid) return;
+
+        this.showLoader(true);
+
+        this._httpService.sendNote(this.noteForm.value).subscribe((res) => {
+            this.clearForm();            
+            this.showLoader(false);
+        });
     }
 }
