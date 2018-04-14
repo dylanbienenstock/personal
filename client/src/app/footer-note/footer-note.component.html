@@ -6,7 +6,7 @@
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
         <button #sendButton class="send">
-            <img src="assets/loading.svg">
+            <img src="assets/loading.svg" [ngStyle]="loaderStyle">
             <div>Send</div>
         </button>
     </div>

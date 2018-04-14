@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'app-footer-note',
@@ -9,6 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class FooterNoteComponent implements OnInit {
     constructor() { }
 
+    @ViewChild("sendButton")
+    private sendButtonRef: ElementRef;
+
+    private get sendButton(): HTMLCanvasElement {
+        return this.sendButtonRef.nativeElement;
+    }
+
+    loaderStyle: any;
+
     note: Object = {
         sender: "",
         email: "",
@@ -16,6 +25,13 @@ export class FooterNoteComponent implements OnInit {
     };
 
     ngOnInit() {
+        let translateX = this.sendButton.clientWidth / 2 - 
+            this.sendButton.clientHeight / 2;
+
+        this.loaderStyle = {
+            width: this.sendButton.clientHeight + "px",
+            transform: `translateX(${translateX}px)`
+        };
     }
 
     onSubmit($event) {
