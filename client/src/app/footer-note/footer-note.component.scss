@@ -34,7 +34,7 @@
             font-family: "Noto Sans", sans-serif;
             color: $text-color;
             background-color: rgba($text-color, 0.1);
-            transition: background 250ms ease;
+            transition: background 300ms ease;
 
             &:hover {
                 background-color: rgba($text-color, 0.2);
@@ -84,7 +84,7 @@
                 font-size: 18px;
                 font-family: "Noto Sans", sans-serif;
                 background-color: rgba($text-color, 0.1);                    
-                transition: background 250ms ease;
+                transition: background 300ms ease;
 
                 &:last-child {
                     margin-right: 0;
