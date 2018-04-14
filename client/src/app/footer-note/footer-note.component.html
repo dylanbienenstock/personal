@@ -1,4 +1,4 @@
-<form id="note-form" (submit)="onSubmit($event)">
+<form id="note-form" (submit)="onSubmit($event)" [ngClass]="formDisabled ? 'disabled' : ''">
     <input type="text" placeholder="Your name" [(ngModel)]="note.sender" name="sender">
     <input type="text" placeholder="Email address" [(ngModel)]="note.email" name="email">
     <textarea form="note-form" placeholder="Note" [(ngModel)]="note.text" name="text"></textarea>
@@ -6,8 +6,8 @@
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
         <button #sendButton class="send">
-            <img src="assets/loading.svg" [ngStyle]="loaderStyle">
-            <div>Send</div>
+            <img [ngStyle]="loaderStyle" src="assets/loading.svg">
+            <div [ngStyle]="sendButtonTextStyle">Send</div>
         </button>
     </div>
 </form>

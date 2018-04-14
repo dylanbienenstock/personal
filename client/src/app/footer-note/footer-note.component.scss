@@ -5,6 +5,15 @@
         display: flex;
         flex-flow: column nowrap;
 
+        &.disabled {
+            input,
+            textarea,
+            button {
+                background-color: rgba($text-color, 0.05) !important;
+                pointer-events: none;
+            }
+        }
+
         textarea {
             min-height: 200px;
         }
@@ -53,7 +62,6 @@
                 img {
                     position: absolute;
                     width: 44px;
-                    opacity: 0;
                 }
 
                 div {

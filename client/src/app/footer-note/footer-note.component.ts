@@ -16,7 +16,17 @@ export class FooterNoteComponent implements OnInit {
         return this.sendButtonRef.nativeElement;
     }
 
-    loaderStyle: any;
+    formDisabled = false;
+
+    loaderStyle = {
+        width: "44px",
+        transform: "",
+        opacity: 0
+    };
+
+    sendButtonTextStyle = {
+        opacity: 1
+    };
 
     note: Object = {
         sender: "",
@@ -28,17 +38,23 @@ export class FooterNoteComponent implements OnInit {
         let translateX = this.sendButton.clientWidth / 2 - 
             this.sendButton.clientHeight / 2;
 
-        this.loaderStyle = {
-            width: this.sendButton.clientHeight + "px",
-            transform: `translateX(${translateX}px)`
-        };
+        this.loaderStyle.width = this.sendButton.clientHeight + "px";
+        this.loaderStyle.transform = `translateX(${translateX}px)`;
     }
 
     onSubmit($event) {
         $event.preventDefault();
+        this.showLoader(true);
     }
 
     onClear($event) {
         $event.preventDefault();
+        this.showLoader(false);
+    }
+
+    showLoader(visible: boolean) {
+        this.formDisabled = visible;
+        this.loaderStyle.opacity = visible ? 1 : 0;
+        this.sendButtonTextStyle.opacity = visible ? 0 : 1;
     }
 }
