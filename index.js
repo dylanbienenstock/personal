@@ -7,7 +7,12 @@ const fs = require("fs");
 const prettyBytes = require("pretty-bytes");
 const downloadsPath = path.join(".", "downloads");
 
+const bodyparser = require("body-parser");
+const nodemailer = require("nodemailer");
+const config = require("./config.json");
+
 app.use(express.static(path.join(__dirname, "client/dist")));
+app.use(bodyparser.json({ extended: true }));
 
 app.get("/downloads", (req, res) => {
     fs.readdir(downloadsPath, (err, fileNames) => {
@@ -28,6 +33,32 @@ app.get("/downloads", (req, res) => {
 
 app.get("/downloads/:fileName", (req, res) => {
     res.download(path.join(downloadsPath, req.params.fileName));
+});
+
+app.post("/note", (req, res) => {
+    let transporter = nodemailer.createTransport(config.nodemailer);
+    let email = {
+        from: `"${req.body.sender}" <${req.body.email}>`,
+        to: "db@dylanbienenstock.com",
+        subject: `Note from ${req.body.sender}`,
+        html: `
+            Name: <b>${req.body.sender}</b> <br>
+            Email: <b>${req.body.email}</b> <br> <br>
+            ${req.body.text}
+        `
+    };
+
+    let success = true;
+
+    transporter.sendMail(email, (err, info) => {
+        if (err) {
+            console.log(err);
+
+            success = false;
+        }
+    });
+
+    res.send(success);
 });
 
 app.get("*", (req, res) => {
