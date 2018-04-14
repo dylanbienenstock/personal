@@ -41,18 +41,30 @@
             font-size: 0;
 
             .clear {
-                color: #d64444;                        
+                color: #d64444;
+                padding: 10px 14px;
             }
 
             .send {
-                color: $accent-color;                        
+                color: $accent-color;
+                padding: 0 !important;
+                text-align: left;
+                
+                img {
+                    position: absolute;
+                    width: 28px;
+                }
+
+                div {
+                    padding: 10px 14px;
+                    text-align: center;
+                }
             }
 
-            * {
+            .clear, .send {
                 cursor: pointer;
                 display: inline-block;
                 margin-right: 8px;
-                padding: 10px 14px;                    
                 outline: 0;
                 border: 0;
                 border-radius: 8px;

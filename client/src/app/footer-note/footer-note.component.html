@@ -5,6 +5,9 @@
 
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
-        <input type="submit" class="send" value="Send">
+        <button #sendButton class="send">
+            <img src="assets/loading.svg">
+            <div>Send</div>
+        </button>
     </div>
 </form>
