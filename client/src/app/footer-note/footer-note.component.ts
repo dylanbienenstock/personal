@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { HttpService } from '../http.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-footer-note',
@@ -7,7 +9,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 
 export class FooterNoteComponent implements OnInit {
-    constructor() { }
 
     @ViewChild("sendButton")
     private sendButtonRef: ElementRef;
@@ -28,11 +29,7 @@ export class FooterNoteComponent implements OnInit {
         opacity: 1
     };
 
-    note: Object = {
-        sender: "",
-        email: "",
-        text: ""
-    };
+    noteForm: FormGroup;
 
     ngOnInit() {
         let translateX = this.sendButton.clientWidth / 2 - 
@@ -40,6 +37,18 @@ export class FooterNoteComponent implements OnInit {
 
         this.loaderStyle.width = this.sendButton.clientHeight + "px";
         this.loaderStyle.transform = `translateX(${translateX}px)`;
+
+        this.noteForm = new FormGroup({
+            "sender": new FormControl("", [
+                Validators.required
+            ]),
+            "email": new FormControl("", [
+                Validators.required                
+            ]),
+            "text": new FormControl("", [
+                Validators.required
+            ])
+        });
     }
 
     onSubmit($event) {
@@ -51,11 +60,11 @@ export class FooterNoteComponent implements OnInit {
     onClear($event) {
         $event.preventDefault();
 
-        this.note = {
-            sender: "",
-            email: "",
-            text: ""
-        };
+        this.clearForm();
+    }
+
+    clearForm() {
+        this.noteForm.reset();
     }
 
     showLoader(visible: boolean) {

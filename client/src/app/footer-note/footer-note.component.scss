@@ -1,5 +1,7 @@
 @import "~mixins.scss";
 
+$red: #d64444;
+
 :host {
     form {
         display: flex;
@@ -14,11 +16,17 @@
             }
         }
 
+        .ng-touched.ng-invalid {
+            border: 1px solid $red;
+        }
+
         textarea {
             min-height: 200px;
         }
 
-        input[type=text], textarea {
+        input[type=text], 
+        input[type=email], 
+        textarea {
             box-sizing: border-box;            
             cursor: pointer;
             resize: none;
@@ -34,7 +42,9 @@
             font-family: "Noto Sans", sans-serif;
             color: $text-color;
             background-color: rgba($text-color, 0.1);
-            transition: background 300ms ease;
+            border: 1px solid transparent;
+            transition: background 300ms ease,
+                        border 300ms ease;
 
             &:hover {
                 background-color: rgba($text-color, 0.2);
@@ -50,7 +60,7 @@
             font-size: 0;
 
             .clear {
-                color: #d64444;
+                color: $red;
                 padding: 10px 14px;
             }
 

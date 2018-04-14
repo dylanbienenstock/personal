@@ -1,7 +1,22 @@
-<form id="note-form" (submit)="onSubmit($event)" [ngClass]="formDisabled ? 'disabled' : ''">
-    <input type="text" placeholder="Your name" [(ngModel)]="note.sender" name="sender">
-    <input type="text" placeholder="Email address" [(ngModel)]="note.email" name="email">
-    <textarea form="note-form" placeholder="Note" [(ngModel)]="note.text" name="text"></textarea>
+<form id="note-form"
+[formGroup]="noteForm"
+[ngClass]="formDisabled ? 'disabled' : ''"
+(submit)="onSubmit($event)">
+    <input
+    type="text"  
+    placeholder="Your name" 
+    formControlName="sender">
+
+    <input
+    type="text" 
+    placeholder="Email address"
+    formControlName="email">
+
+    <textarea
+    form="note-form"
+    placeholder="Note"
+    formControlName="text">
+    </textarea>
 
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
@@ -11,3 +26,5 @@
         </button>
     </div>
 </form>
+
+{{ this.noteForm.value | json }}
