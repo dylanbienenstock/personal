@@ -12,4 +12,8 @@ export class HttpService {
     downloadFile(fileName: string) {
         window.location.href = `downloads/${fileName}`;
     }
+
+    sendNote(note) {
+        return this._httpClient.post("note", note);
+    }
 }
