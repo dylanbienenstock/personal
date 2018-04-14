@@ -17,7 +17,7 @@ import { ScrollService } from './scroll.service';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { FooterComponent } from './footer/footer.component';
 import { FooterNoteComponent } from './footer-note/footer-note.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SocialComponent } from './social/social.component';
 import { FooterDownloadsComponent } from './footer-downloads/footer-downloads.component';
 
@@ -44,7 +44,8 @@ import { HttpService } from './http.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
 	  Title,
