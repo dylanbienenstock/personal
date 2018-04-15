@@ -3,10 +3,11 @@
 $size: 67.5vmin;
 
 :host {
-    @include center-absolute;
     @include noselect;
 
     canvas {
+        @include center-absolute;
+
         cursor: pointer;
         width: $size !important;
         height: $size !important;

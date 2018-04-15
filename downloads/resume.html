@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Dylan Bienenstock</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<script>
+			function showNotes() {
+				document.getElementById("hide-notes").remove();
+			}
+		</script>
+
+		<style id="hide-notes">
+            .not-sure {
+                border-bottom: 0 !important;
+            }
+
+            .edit-note {
+                display: none;
+            }
+		</style>
+
+		<style>
+			:root {
+				--accent-color: #0d93c3;
+				--edit-color: red;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #525659;
+
+				font-family: "Montserrat", sans-serif;
+			}
+
+			h1, h2, h3, h4, p {
+				margin: 0;
+			}
+
+			.not-sure {
+				box-sizing: border-box;
+				border-bottom: 2px solid var(--edit-color);
+
+				width: -webkit-fit-content;
+				width: -moz-fit-content;
+				width: fit-content;
+			}
+
+			.edit-note {
+				color: var(--edit-color);
+				line-height: 14px;
+				font-size: 12px;
+				font-weight: bold;
+			}
+
+			.edit-note:before { content: "("; }
+			.edit-note:after { content: ")"; }
+
+			#resume {
+				position: absolute;
+				padding: 0 0.5in;
+				box-sizing: border-box;
+				width: 8.5in;
+				height: 11in;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: white;
+			}
+
+			@page
+			{ 
+				size: auto;
+				margin: 0;  
+			}
+
+			@media screen {
+				#resume {
+					margin: 0.5in 0 !important;
+					box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+				}
+			}
+
+			@media print {
+				#resume {
+					top: 0;
+					left: 0;
+					transform: unset !important;
+				}
+
+				.not-sure {
+					border-bottom: 0;
+				}
+
+				.edit-note {
+					display: none;
+				}
+			}
+
+			#resume-inner {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			#title-container {
+				border-bottom: 2px solid black;
+				font-size: 0;
+			}
+
+			#title {
+				font-size: 20px;
+				margin-bottom: 4px;
+			}
+
+			#subtitle {
+				font-size: 18px;
+				color: var(--accent-color);
+
+				margin-bottom: 0;
+			}
+
+			#contact-info {
+				line-height: 1.45;
+				font-size: 14px;
+				text-align: right;
+			}
+
+			a {
+				color: var(--accent-color) !important;
+				text-decoration: underline var(--accent-color) !important;
+			}
+
+			#header {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				margin-bottom: 30px;
+
+				/*padding-bottom: 10px;*/
+				/*border-bottom: 2px solid black;*/
+			}
+
+			#header-underline {
+				display: inline-block !important;
+				width: 100%;
+				height: 4px;
+				background-color: black !important;
+				outline: 0;
+				border: 0;
+			}
+
+			td {
+				padding-bottom: 20px;
+			}
+
+			td:first-child {
+				/*text-align: right;*/
+				vertical-align: top;
+				color: var(--accent-color);
+				font-weight: bold;
+				padding-right: 20px;
+				font-size: 14px;
+			}
+
+			tr:last-child td {
+				padding-bottom: 0;
+			}
+
+			.section-header {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				margin-bottom: 10px;
+			}
+
+			h3 {
+				font-size: 18px;
+				font-weight: normal;
+			}
+
+			h4 {
+				font-size: 12px;
+			}
+
+
+			p {
+				font-size: 14px;
+			}
+
+			.section-header-right p {
+				text-align: right;
+				line-height: 1.5;
+				font-size: 12px;
+			}
+
+			.project-container {
+				display: grid;
+				grid: 1fr / 1fr 1fr;
+				grid-gap: 20px;
+			}
+
+			.project-container h3 {
+				margin-bottom: 10px;
+			}
+
+			#skills {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+			}
+
+			#skills h3 {
+				margin-bottom: 10px;
+			}
+
+			#skills p {
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="resume">
+			<div id="resume-inner">
+				<div id="header">
+					<div id="title-container">
+						<h1 id="title">Dylan Bienenst<span onclick="showNotes()">o</span>ck</h1>
+						<h2 id="subtitle">Web Developer</h2>
+					</div>
+
+					<div id="contact-info">
+						<p>1014 151st PL NE</p>
+						<p>Bellevue, Washington</p>
+
+						<p>db@<a href="http://www.dylanbienenstock.com" target="_blank">dylanbienenstock.com</a></p>
+
+						<p>(206) 915 5538</p>
+					</div>
+				</div>
+
+				<table id="content">
+					<tr>
+						<td>ABOUT ME</td>
+						<td>
+							<p>
+								Predominantly self-taught full stack web developer from age 10. Focused primarily on user interface / experience design. Passionate about privacy. Skills include analytical problem solving, excellent communication, and consistency. 
+
+								<span class="not-sure">I think ahead and I learn quickly.</span>
+								<span class="edit-note">Make this third person?</span>
+							</p>	
+						</td>
+					</tr>
+
+					<tr>
+						<td>EDUCATION</td>
+						<td>
+							<div class="section-header">
+								<div class="section-header-left">
+									<h3>Coding Dojo</h3>
+									<h4>Triple Black Belt (95%+ on all exams)</h4>
+								</div>
+
+								<div class="section-header-right">
+									<p>Bellevue, Washington</p>
+									<p>Graduated April 2018</p>
+								</div>
+							</div>
+
+							<p>
+								Rigorous 14 week web development boot camp. Wrote and debugged code for 60+ hours per week. Practiced algorithms and data structures every morning. Gained hands-on experience with MEAN stack, C# stack, and Python stack by completing multiple projects daily. Tri-weekly exams lasted 
+
+								<span class="not-sure">4h30min</span>
+								<span class="edit-note">Reformat?</span>
+
+								including wireframing and deployment on AWS.
+
+								<span class="edit-note">Add more to this section?</span>
+							</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td>EXPERIENCE</td>
+						<td>
+							<div class="section-header">
+								<div class="section-header-left">
+									<h3>iD Tech Camps</h3>
+									<h4>Programming Instructor</h4>
+								</div>
+
+								<div class="section-header-right">
+									<p>Stanford, California</p>
+									<p class="not-sure">Summer 2016, Summer 2017</p>
+								</div>
+							</div>
+
+							<p>
+								Instructed students age 7-18 in a semi-structured environment. Led classes in 3D Level Design, Java, Python, Raspberry Pi, and Tynker.
+
+								<span class="not-sure">Classes were taught in week long sessions to groups of 8 students.</span>
+								<span class="edit-note">Rephrase this?</span>
+
+								Students completed fully functional, self-directed projects by the end of each week.
+							</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td>PROJECTS</td>
+						<td>
+							<div class="project-container">
+								<div class="project">
+									<h3>XPGP</h3>
+
+									<p>
+										Online social PGP keychain. Allows for easy key generation, sharing, and lookup. Presents functionality similar to that of GPG Keychain in an approachable, accessible platform. 
+									</p>
+								</div>
+
+								<div class="project">
+									<h3>Warp</h3>
+
+									<p>
+										Multiplayer space-shooter game with massive procedurally generated galaxy. Contains hundreds of networked physics objects optimized using quadtrees.
+									</p>
+								</div>
+
+								<div class="project">
+									<h3>CanITake</h3>
+
+									<p>
+										Provides reliable information about drug interactions in a highly readable format. Aggregates data from multiple APIs, including RxNorm (US National Library of Medicine.)
+									</p>
+								</div>
+
+								<div class="project">
+									<h3>Puzzle Snake</h3>
+
+									<p>
+										Simulates an interactive 3D puzzle using three.js. Allows the user to import and export configurations as a string of numbers. Based on the popular Rubik's Twist.
+									</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>SKILLS</td>
+						<td>
+							<div id="skills">
+								<div>
+									<h3>Technologies</h3>
+									
+									<p>Angular 5</p>
+									<p>NodeJS + Express</p>
+									<p>Socket.IO</p>
+									<p>jQuery</p>
+									<p>ASP .NET Core</p>
+									<p>MongoDB</p>
+									<p>PostgreSQL</p>
+									<p>Django</p>
+								</div>
+
+								<div>
+									<h3>Languages</h3>
+									
+									<p>JavaScript</p>
+									<p>TypeScript</p>
+									<p>CSS / SCSS</p>
+									<p>C# .NET</p>
+									<p>Python</p>
+									<p>Java</p>
+									<p>Lua</p>
+									<p>C / C++</p>
+								</div>
+
+								<div>
+									<h3>Miscellaneous</h3>
+									
+									<p>UI / UX Design</p>
+									<p>Game Engine Design</p>
+									<p>Graphic Design</p>
+									<p>3D Level Design</p>
+									<p>3D Modeling</p>
+									<p>Electrical Engineering</p>
+									<p>iOS / Android Development</p>
+									<p class="edit-note">Algorithms &amp; Data Structures?</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

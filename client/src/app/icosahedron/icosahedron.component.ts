@@ -184,6 +184,22 @@ export class IcosahedronComponent implements AfterViewInit {
         }, 100);
     }
 
+    @HostListener("window:scroll", ["$event"])
+    onScrollEvent($event) {
+        let scrollY = window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop || 0;
+
+        let canvasBottom = this.canvas.offsetTop + this.canvas.offsetHeight / 2;
+        let isInViewport = scrollY <= canvasBottom;
+
+        if (isInViewport) {
+            this.resumeRendering();
+        } else {
+            this.pauseRendering();
+        }
+    }
+
     public resizeRenderer() {
         this.canvas.style.width = "100%";
         this.canvas.style.height = "100%";
@@ -198,18 +214,26 @@ export class IcosahedronComponent implements AfterViewInit {
         this.createCamera();
         this.startRendering();
 
-        ifvisible.on("blur", function () {
-            if (this.clock) {
-                this.clock.stop();
-            }
+        ifvisible.on("blur", function() {
+            this.pauseRendering();
         }.bind(this));
 
-        ifvisible.on("focus", function () {
-            if (this.clock) {
-                this.clock.start();
-                this.render();
-            }
+        ifvisible.on("focus", function() {
+            this.resumeRendering();
         }.bind(this));
+    }
+
+    pauseRendering() {
+        if (this.clock && this.clock.running) {
+            this.clock.stop();
+        }
+    }
+
+    resumeRendering() {
+        if (this.clock && !this.clock.running) {
+            this.clock.start();
+            this.render();
+        }
     }
 
     onClick(event: Event) {

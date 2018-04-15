@@ -22,6 +22,8 @@ import { SocialComponent } from './social/social.component';
 import { FooterDownloadsComponent } from './footer-downloads/footer-downloads.component';
 
 import { HttpService } from './http.service';
+import { EmailComponent } from './email/email.component';
+import { TelComponent } from './tel/tel.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { HttpService } from './http.service';
     FooterComponent,
     FooterNoteComponent,
     SocialComponent,
-    FooterDownloadsComponent
+    FooterDownloadsComponent,
+    EmailComponent,
+    TelComponent
   ],
   imports: [
     BrowserModule,

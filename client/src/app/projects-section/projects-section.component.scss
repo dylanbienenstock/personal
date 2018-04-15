@@ -46,6 +46,7 @@
                     .project-subsection-text-description {
                         text-align: left;
                         margin-bottom: 32px;
+                        font-size: 20px;
                     }
 
                     .project-subsection-text-tags {
@@ -132,7 +133,10 @@
 
                         h1 {
                             text-align: left;
-                            margin-left: 16px;
+                        }
+
+                        .project-subsection-text-description {
+                            text-align: left;
                         }
                         
                         .project-subsection-text-link-container {
