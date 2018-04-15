@@ -86,6 +86,8 @@ $red: #d64444;
             }
 
             .clear, .send {
+                @include noselect;
+
                 cursor: pointer;
                 display: inline-block;
                 margin-right: 8px;
