@@ -65,7 +65,9 @@ export class FooterNoteComponent implements OnInit {
     onClear($event) {
         $event.preventDefault();
 
-        this.clearForm();
+        if (!this.formDisabled) {
+            this.clearForm();
+        }
     }
 
     clearForm() {
