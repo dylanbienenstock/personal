@@ -85,9 +85,11 @@ export class FooterNoteComponent implements OnInit {
 
         this.showLoader(true);
 
-        this._httpService.sendNote(this.noteForm.value).subscribe((res) => {
-            this.clearForm();            
-            this.showLoader(false);
-        });
+        setTimeout((() => {
+            this._httpService.sendNote(this.noteForm.value).subscribe((res) => {
+                this.clearForm();            
+                this.showLoader(false);
+            });
+        }).bind(this), 1500);
     }
 }
