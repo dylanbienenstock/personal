@@ -1,6 +1,17 @@
 <div class="container">
-	<img src="assets/img/social/{{ theme }}/github.svg" class="theme-{{ theme }}">
-	<img src="assets/img/social/{{ theme }}/linkedin.svg" class="theme-{{ theme }}">
-	<img src="assets/img/social/{{ theme }}/spotify.svg" class="theme-{{ theme }}">
-	<img src="assets/img/social/{{ theme }}/email.svg"  class="theme-{{ theme }}">
+    <img src="assets/img/social/{{ theme }}/github.svg"
+    class="theme-{{ theme }}"
+    (click)="goTo('https://github.com/dylanbienenstock')">
+    
+    <img src="assets/img/social/{{ theme }}/linkedin.svg"
+    class="theme-{{ theme }}"
+    (click)="goTo('https://www.linkedin.com/in/dylan-bienenstock-bb6a03144')">
+    
+    <img src="assets/img/social/{{ theme }}/spotify.svg"
+    class="theme-{{ theme }}"
+    (click)="goTo('https://open.spotify.com/user/1234629732?si=fJg7zV75TCiYzqhfXcvyzg')">
+    
+    <img src="assets/img/social/{{ theme }}/email.svg" 
+    class="theme-{{ theme }}"
+    (click)="mailTo()">
 </div>
