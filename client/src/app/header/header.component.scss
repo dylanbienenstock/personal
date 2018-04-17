@@ -64,5 +64,23 @@
         .links {
             display: none;
         }
+
+        @media (max-width: 425px) {
+            .title {
+                img {
+                    width: 8vw;
+                }
+
+                .title-text {
+                    h1 {
+                        font-size: 4vw;
+                    }
+
+                    p {
+                        font-size: 3.75vw;
+                    }
+                }
+            }
+        }
     }
 }
