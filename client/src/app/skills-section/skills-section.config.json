@@ -4,7 +4,7 @@
         "skills": [
             {
                 "name": "Node + Express",
-                "level": 1
+                "level": 2
             },
             {
                 "name": "Socket.IO",
@@ -12,11 +12,11 @@
             },
             {
                 "name": "Angular",
-                "level": 1
+                "level": 2
             },
             {
                 "name": "MongoDB",
-                "level": 0
+                "level": 1
             },
             {
                 "name": "ASP NET Core",
@@ -93,12 +93,16 @@
                 "level": 0
             },
             {
-                "name": "Electrical Engineering",
+                "name": "Arduino Programming",
                 "level": 0
             },
             {
-                "name": "UX / UI Design",
-                "level": 1
+                "name": "UI / UX Design",
+                "level": 2
+            },
+            {
+                "name": "Android Development",
+                "level": 0
             }
         ]
     }
