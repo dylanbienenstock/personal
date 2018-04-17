@@ -59,33 +59,10 @@
     }
 
     @include mobile {
-		padding: 16px;
-
-        .title {
-			display: none;
-        }
-
+        padding: 16px;
+        
         .links {
-            text-align: center;
-            width: 100%;
-        }
-    }
-
-    @media (max-width: 360px) {
-        .title {
             display: none;
-        }
-
-        .links {
-            .links-inner {
-                display: grid;
-                grid: 1fr 1fr / 1fr 1fr;
-            }
-
-            a {
-                display: block;
-                margin-right: 0 !important;
-            }
         }
     }
 }
