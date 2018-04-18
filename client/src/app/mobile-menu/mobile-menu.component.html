@@ -1,1 +1,7 @@
-<img src="assets/img/menu.svg">
+<img src="assets/img/menu.svg" (click)="openMenu()">
+
+<div class="curtain" [class.visible]="menuVisible" (click)="closeMenu()"></div>
+
+<div class="menu" [class.visible]="menuVisible">
+    
+</div>

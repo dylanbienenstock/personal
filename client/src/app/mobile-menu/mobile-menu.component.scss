@@ -12,6 +12,39 @@
         height: 32px !important;
     }
 
+    .curtain {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 350ms ease;
+        z-index: 998;
+        background-color: black;
+
+        &.visible {
+            opacity: 0.8;
+            pointer-events: initial !important;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 0px;
+        background-color: $background-color;
+        transition: height 350ms ease;
+        z-index: 999;
+
+        &.visible {
+            height: 250px !important;
+        }
+    }
+
     @media (max-width: 425px) {
         img {
             width: 8vw;

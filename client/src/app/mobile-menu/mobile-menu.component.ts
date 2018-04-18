@@ -10,7 +10,16 @@ export class MobileMenuComponent implements OnInit {
 
     constructor() { }
 
+    menuVisible: boolean = false;
+
     ngOnInit() {
     }
 
+    openMenu() {
+        this.menuVisible = true;
+    }
+
+    closeMenu() {
+        this.menuVisible = false;
+    }
 }
