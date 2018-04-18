@@ -2,13 +2,13 @@ $background-color: #222;
 $text-color: #DDD;
 $accent-color: #65D588;
 $header-padding: 3vw;
-// $header-padding: 4.25vw;
+$section-padding: 48px;
 
 @mixin section {
     display: block;
     width: 100vw;
-    padding: 48px 0;
-    text-align: center;    
+    padding: $section-padding 0;
+	text-align: center;
 }
 
 @mixin section-dark {
