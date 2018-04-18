@@ -9,7 +9,7 @@ db@dylanbienenstock.com
 
 ABOUT ME
 ‾‾‾‾‾‾‾‾
-Predominantly self-taught full stack web developer from age 10. Focused primarily on user interface / experience design. Passionate about privacy. Skills include analytical problem solving, excellent communication, and consistency.
+Predominantly self-taught full stack web developer with a focus on front end. Passionate about privacy. Skills include analytical problem solving, excellent communication, and consistency. Intrinsically motivated since age 10. I think ahead and I learn quickly.
 
 
 EDUCATION
@@ -19,7 +19,7 @@ Triple Black Belt (95%+ on all exams)
 Bellevue, Washington
 Graduated April 2018
 
-Rigorous 14 week web development boot camp. Wrote and debugged code for 60+ hours per week. Practiced algorithms and data structures every morning. Gained hands-on experience with MEAN stack, C# stack, and Python stack by completing multiple projects daily. Tri-weekly exams lasted including wireframing and deployment on AWS.
+Rigorous 14 week web development boot camp. Wrote and debugged code for 60+ hours per week. Practiced algorithms, runtimes, and data structures every morning. Gained hands-on experience with numerous front end frameworks, back end frameworks, and database management. Tri-weekly exams lasted 4h30min including wireframing and deployment on AWS. Spent time tutoring peers daily.
 
 
 EXPERIENCE
@@ -28,7 +28,8 @@ iD Tech Camps
 Programming Instructor
 Stanford, California
 
-Instructed students age 7-18 in a semi-structured environment. Led classes in 3D Level Design, Java, Python, Raspberry Pi, and Tynker. Students completed fully functional, self-directed projects by the end of each week.
+Enthusiastically instructed students age 7-18 in 3D Level Design, Java, Python, Raspberry Pi, and Tynker. Classes were taught in accelerated week long sessions to groups of 8 students. Kept students motivated and excited to expand their skills. Students completed fully functional, self-directed projects by the end of each week.
+
 
 PROJECTS
 ‾‾‾‾‾‾‾‾

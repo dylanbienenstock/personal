@@ -7,7 +7,7 @@
 		@include fill-screen-mobile;
 
         display: inline-block;
-        width: 65vw;        
+        width: 50vw;        
         font-size: 20px;
 
         h1 {
@@ -16,16 +16,23 @@
 
         .blurb {
             text-align: left;
+            line-height: 1.5;
             margin: 16px 0 64px 0;
 
             a, .link {
                 cursor: pointer;
                 color: $background-color !important;
+                background-color: rgba($background-color, 0.1);
+                padding: 0 4px;
+                border-radius: 6px;
                 text-decoration: none;
                 font-weight: bold;
+                transition: background 250ms ease;
+                white-space: pre;
 
                 &:hover {
-                    text-decoration: underline !important;
+                    // text-decoration: underline !important;
+                    background-color: rgba($background-color, 0.3);                    
                 }
             }
         }

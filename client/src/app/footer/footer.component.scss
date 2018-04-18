@@ -15,9 +15,18 @@
             padding: 48px 0;
             box-sizing: border-box;
 
+            @media (max-height: 670px) {
+                height: auto;
+
+                .copyright {
+                    margin-top: 64px;
+                }
+            }
+
             h1 {
                 font-size: 32px;
                 margin-bottom: 64px;
+                flex: 1;
             }
 
             h2 {

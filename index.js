@@ -9,7 +9,12 @@ const downloadsPath = path.join(".", "downloads");
 
 const bodyparser = require("body-parser");
 const nodemailer = require("nodemailer");
-const config = require("./config.json");
+
+var config;
+
+try {
+    config = require("./config.json");
+} catch (e) { }
 
 app.use(express.static(path.join(__dirname, "client/dist")));
 app.use(bodyparser.json({ extended: true }));
@@ -36,29 +41,33 @@ app.get("/downloads/:fileName", (req, res) => {
 });
 
 app.post("/note", (req, res) => {
-    let transporter = nodemailer.createTransport(config.nodemailer);
-    let email = {
-        from: `"${req.body.sender}" <${req.body.email}>`,
-        to: "db@dylanbienenstock.com",
-        subject: `Note from ${req.body.sender}`,
-        html: `
-            Name: <b>${req.body.sender}</b> <br>
-            Email: <b>${req.body.email}</b> <br> <br>
-            ${req.body.text}
-        `
-    };
+    if (config) {
+        let transporter = nodemailer.createTransport(config.nodemailer);
+        let email = {
+            from: `"${req.body.sender}" <${req.body.email}>`,
+            to: "db@dylanbienenstock.com",
+            subject: `Note from ${req.body.sender}`,
+            html: `
+                Name: <b>${req.body.sender}</b> <br>
+                Email: <b>${req.body.email}</b> <br> <br>
+                ${req.body.text}
+            `
+        };
 
-    let success = true;
+        let success = true;
 
-    transporter.sendMail(email, (err, info) => {
-        if (err) {
-            console.log(err);
+        transporter.sendMail(email, (err, info) => {
+            if (err) {
+                console.log(err);
 
-            success = false;
-        }
-    });
+                success = false;
+            }
+        });
 
-    res.send(success);
+        res.send(success);
+    } else {
+        res.send(false);
+    }
 });
 
 app.get("*", (req, res) => {
