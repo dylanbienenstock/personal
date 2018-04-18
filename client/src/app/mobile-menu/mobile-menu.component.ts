@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ScrollService } from '../scroll.service';
 
 @Component({
     selector: 'app-mobile-menu',
@@ -7,8 +8,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 
 export class MobileMenuComponent implements OnInit {
-
-    constructor() { }
+    constructor(private _scroll: ScrollService) { }
 
     menuVisible: boolean = false;
 
@@ -21,5 +21,10 @@ export class MobileMenuComponent implements OnInit {
 
     closeMenu() {
         this.menuVisible = false;
-    }
+	}
+	
+	scrollTo(section: string) {
+		this.closeMenu();
+		this._scroll.to(section);
+	}
 }

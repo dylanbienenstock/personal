@@ -59,6 +59,7 @@ $menu-padding: 20px;
         }
 		
 		.close {
+			pointer-events: none;
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -68,6 +69,7 @@ $menu-padding: 20px;
 			text-align: right;
 			
 			img {
+				pointer-events: all !important;
 				position: relative;
 				top: 5px;
 				width: 32px;
