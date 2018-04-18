@@ -80,6 +80,8 @@ $menu-padding: 20px;
 
 		.links {
 			a {
+				@include noselect;
+				
 				display: block;
 				padding-bottom: $menu-padding;
 				color: rgba($text-color, 0.4);
