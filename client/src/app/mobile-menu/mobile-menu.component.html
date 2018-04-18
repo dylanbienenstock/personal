@@ -2,6 +2,9 @@
 
 <div class="curtain" [class.visible]="menuVisible" (click)="closeMenu()"></div>
 
-<div class="menu" [class.visible]="menuVisible">
-    
+<div #menu class="menu" [class.visible]="menuVisible">
+    <a>About</a>
+    <a>Skills</a>
+    <a>Projects</a>
+    <a>Contact</a>
 </div>

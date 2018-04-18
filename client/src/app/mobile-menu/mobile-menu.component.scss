@@ -1,5 +1,8 @@
 @import "~mixins.scss";
 
+$menu-height: 196px;
+$menu-padding: 20px;
+
 :host {
     display: none;
 
@@ -20,7 +23,7 @@
         height: 100vh;
         opacity: 0;
         pointer-events: none;
-        transition: opacity 350ms ease;
+        transition: opacity 300ms ease;
         z-index: 998;
         background-color: black;
 
@@ -31,17 +34,31 @@
     }
 
     .menu {
+        overflow: hidden;
         position: absolute;
         left: 0;
         top: 0;
         width: 100vw;
-        height: 0px;
+        height: 0;
         background-color: $background-color;
-        transition: height 350ms ease;
+        text-align: center;
+        transition: height 300ms ease;
         z-index: 999;
 
         &.visible {
-            height: 250px !important;
+            height: $menu-height !important;
+            // height: auto !important;
+        }
+
+        a {
+            display: block;
+            padding-bottom: $menu-padding;
+            color: rgba($text-color, 0.4);
+            font-size: 18px;
+
+            &:first-child {
+                padding-top: $menu-padding;
+            }
         }
     }
 
