@@ -23,7 +23,7 @@
                 "level": 2
             },
             {
-                "name": "Entity Framework",
+                "name": "PostgreSQL",
                 "level": 1
             },
             {
@@ -90,7 +90,7 @@
             },
             {
                 "name": "Graphic Design",
-                "level": 0
+                "level": 1
             },
             {
                 "name": "Arduino Programming",
