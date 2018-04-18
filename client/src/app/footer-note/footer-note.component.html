@@ -21,7 +21,7 @@
     <div class="buttons">
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
         <button #sendButton class="send" [class.disabled]="!noteForm.valid">
-            <img [ngStyle]="loaderStyle" src="assets/loading.svg">
+            <img [ngStyle]="loaderStyle" src="assets/img/loading.svg">
             <div [ngStyle]="sendButtonTextStyle" >Send</div>
         </button>
     </div>
