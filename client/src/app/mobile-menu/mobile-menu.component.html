@@ -1,10 +1,16 @@
-<img src="assets/img/menu.svg" (click)="openMenu()">
+<img class="open" src="assets/img/menu.svg" (click)="openMenu()">
 
 <div class="curtain" [class.visible]="menuVisible" (click)="closeMenu()"></div>
 
 <div #menu class="menu" [class.visible]="menuVisible">
-    <a>About</a>
-    <a>Skills</a>
-    <a>Projects</a>
-    <a>Contact</a>
+	<div class="close">
+		<img src="assets/img/menu-close.svg" (click)="closeMenu()">
+	</div>
+
+	<div class="links">
+		<a>About</a>
+		<a>Skills</a>
+		<a>Projects</a>
+		<a>Contact</a>
+	</div>
 </div>
