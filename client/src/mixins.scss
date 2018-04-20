@@ -24,6 +24,22 @@ $section-padding: 48px;
     background-color: $text-color;
 }
 
+@mixin section-font-sizes {
+    font-size: 20px;
+
+    & h1 {
+        font-size: 32px;
+    }
+
+    @media (max-width: 425px) {
+        font-size: 16px;
+
+        & h1 {
+            font-size: 28px;
+        }
+    }
+}
+
 @mixin mobile {
    @media (max-width: 768px) {
        @content;
