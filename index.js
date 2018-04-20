@@ -64,9 +64,9 @@ app.post("/note", (req, res) => {
             }
         });
 
-        res.send(success);
+        res.send({ success: success });
     } else {
-        res.send(false);
+        res.send({ success: false });
     }
 });
 
