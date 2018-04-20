@@ -57,8 +57,23 @@ $red: #d64444;
         }
 
         .buttons {
-            text-align: right;
+            display: flex;
+            flex-flow: row nowrap;
             font-size: 0;
+
+            .status-container {
+                text-align: left;
+                flex: 1;
+
+                .status {
+                    @include center-vertical;
+
+                    opacity: 0;
+                    font-size: 18px;
+                    color: $accent-color;                    
+                    transition: opacity 300ms ease;
+                }
+            }
 
             .clear {
                 color: $red;
