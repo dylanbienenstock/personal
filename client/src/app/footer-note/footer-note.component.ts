@@ -18,7 +18,9 @@ export class FooterNoteComponent implements OnInit {
         return this.sendButtonRef.nativeElement;
     }
 
-    formDisabled = false;
+    formDisabled: boolean = false;
+    statusText: string = "";
+    statusOk: boolean = true;
 
     loaderStyle = {
         width: "44px",
@@ -30,10 +32,14 @@ export class FooterNoteComponent implements OnInit {
         opacity: 1
     };
 
+    statusTextStyle = {
+        opacity: 0
+    }
+
     noteForm: FormGroup;
 
     ngOnInit() {
-        let translateX = this.sendButton.clientWidth / 2 - 
+        let translateX = this.sendButton.clientWidth / 2 -
             this.sendButton.clientHeight / 2;
 
         this.loaderStyle.width = this.sendButton.clientHeight + "px";
@@ -85,11 +91,31 @@ export class FooterNoteComponent implements OnInit {
 
         this.showLoader(true);
 
+        this.statusOk = true;
+        this.statusText = "Sending...";
+        this.statusTextStyle.opacity = 1;
+
         setTimeout((() => {
             this._httpService.sendNote(this.noteForm.value).subscribe((res) => {
-                this.clearForm();            
-                this.showLoader(false);
+                this.setStatus(res["success"]);
+            }, (err) => {
+                this.setStatus(false);                
             });
+        }).bind(this), 1500);
+    }
+
+    setStatus(ok) {
+        this.showLoader(false);
+
+        if (ok) {
+            this.clearForm();
+        }
+
+        this.statusOk = ok;
+        this.statusText = ok ? "Sent &#10003;&#xFE0E;" : "Error &#9785;&#xFE0E;";
+
+        setTimeout((() => {
+            this.statusTextStyle.opacity = 0;
         }).bind(this), 1500);
     }
 }

@@ -63,15 +63,19 @@ $red: #d64444;
 
             .status-container {
                 text-align: left;
+                font-size: 18px;                
                 flex: 1;
 
-                .status {
+                .statusText {
                     @include center-vertical;
 
                     opacity: 0;
-                    font-size: 18px;
-                    color: $accent-color;                    
                     transition: opacity 300ms ease;
+                    color: $red;
+
+                    &.ok {
+                        color: $accent-color; 
+                    }
                 }
             }
 

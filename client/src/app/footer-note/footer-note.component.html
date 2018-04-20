@@ -20,7 +20,10 @@
 
     <div class="buttons">
         <div class="status-container">
-            <p class="status">Test</p>
+            <p class="statusText" 
+            [ngStyle]="statusTextStyle"
+            [class.ok]="statusOk"
+            [innerHtml]="statusText"></p>
         </div>
 
         <input type="button" class="clear" value="Clear" (click)="onClear($event)">
