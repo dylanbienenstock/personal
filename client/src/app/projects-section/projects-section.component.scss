@@ -8,11 +8,9 @@
 	}
 
     div {
-		display: inline-block;
+        @include section-font-sizes;
 
-        h1 {
-            font-size: 32px;
-        }
+		display: inline-block;
         
         .title {
             width: 100vw;            
@@ -50,7 +48,7 @@
                     .project-subsection-text-description {
                         text-align: left;
                         margin-bottom: 32px;
-                        font-size: 20px;
+                        // font-size: 20px;
                     }
 
                     .project-subsection-text-tags {
@@ -60,7 +58,7 @@
                         justify-content: center;
                         padding: 0 48px;
 
-                        div {
+                        p {
                             display: inline-block;
                             margin-left: 4px;
                             margin-right: 4px;

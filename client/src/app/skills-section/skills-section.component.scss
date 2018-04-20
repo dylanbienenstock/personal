@@ -4,15 +4,11 @@
     @include section-dark;
 
     .container {
+        @include section-font-sizes;
 		@include fill-screen-mobile;
 
         display: inline-block;
         width: 50vw;
-        font-size: 20px;
-
-        h1 {
-            font-size: 32px;
-        }
 
         .blurb {
             margin: 16px 0 64px 0;

@@ -6,6 +6,8 @@
     padding: 0;
 
     .container {
+        @include section-font-sizes;        
+
         display: inline-block;
 
         .container-inner {
@@ -24,7 +26,7 @@
             }
 
             h1 {
-                font-size: 32px;
+                // font-size: 32px;
                 margin-bottom: 64px;
                 flex: 1;
             }
@@ -36,7 +38,7 @@
             }
 
             .copyright {
-                font-size: 18px;
+                font-size: 16px;
                 color: rgba($text-color, 0.4);
             }
 
